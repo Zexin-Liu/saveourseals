@@ -1,0 +1,3073 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Seal Conservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed:400,300,700"
+        rel="stylesheet" />
+
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/color/default.css" rel="stylesheet" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="ico/favicon.ico" />
+    <link rel="shortcut icon" type="image/gif/png" href="/assets/img/sealogo.png">
+
+
+    <style>
+        .button1 {
+            background-color: #87BAEE;
+            color: #000;
+            border-radius: 5px;
+            padding: 15px 32px;
+        }
+
+        /****************************** CSS talk bubble ***********************************/
+        .talk-bubble {
+            /* left arrow */
+            position: relative;
+            width: 50%;
+            height: auto;
+            background-color: lightgreen;
+            margin-left: 5px;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .talk-bubble2 {
+            /* right arrow*/
+            position: relative;
+            width: 50%;
+            height: auto;
+            background-color: lightgreen;
+            margin-right: 5px;
+            padding: 0 20px 0 20px;
+            float: right;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .talk-bubble-yes {
+            /* highlight yes */
+            position: relative;
+            width: 50%;
+            height: auto;
+            background-color: paleturquoise;
+            margin-right: 5px;
+            padding: 0 20px 0 20px;
+            float: right;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .talk-bubble-no {
+            /* highlight no */
+            position: relative;
+            width: 50%;
+            height: auto;
+            background-color: lightpink;
+            margin-right: 5px;
+            padding: 0 20px 0 20px;
+            float: right;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .talk-bubble-center {
+            /* right arrow*/
+            position: relative;
+            width: 50%;
+            height: auto;
+            background-color: lightgreen;
+            margin-left: 20%;
+            margin-right: 15%;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-bottom: 5px;
+            font-family: monospace;
+            border-radius: 10px;
+        }
+
+        .talk-bubble-collapse {
+            /* right arrow*/
+            position: relative;
+            width: 50%;
+            height: auto;
+            background-color: ghostwhite;
+            margin-left: 20%;
+            margin-right: 15%;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-bottom: 5px;
+            font-family: monospace;
+            border-radius: 10px;
+        }
+
+        .talk-bubble-head-not-answered {
+            /* right arrow*/
+            position: relative;
+            width: 1px;
+            height: auto;
+            background-color: cadetblue;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-bottom: 5px;
+            margin-right: 3px;
+            font-family: monospace;
+        }
+
+
+        .bgRed {
+            background-color: cadetblue;
+        }
+
+        .bgBlue {
+            background-color: blue;
+        }
+
+        .bgOrange {
+            background-color: lightsteelblue;
+        }
+
+        .talk-bubble-head-current-answer {
+            /* right arrow*/
+            position: relative;
+            width: 1px;
+            height: auto;
+            background-color: cadetblue;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-bottom: 5px;
+            margin-right: 3px;
+            font-family: monospace;
+        }
+
+        .talk-bubble-head-answered {
+            /* right arrow*/
+            position: relative;
+            width: 1px;
+            height: auto;
+            background-color: lightgreen;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-bottom: 5px;
+            margin-right: 3px;
+            font-family: monospace;
+        }
+
+        .talk-bubble-option-select {
+            /* right arrow*/
+            position: relative;
+            width: 50%;
+            align-content: center;
+            height: auto;
+            background-color: ghostwhite;
+            margin-left: 20%;
+            margin-right: 15%;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-family: monospace;
+        }
+
+        .talk-bubble-thank-you {
+            /* right arrow*/
+            position: relative;
+            width: 50%;
+            align-content: center;
+            height: auto;
+            background-color: ghostwhite;
+            margin-left: 20%;
+            margin-right: 15%;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-bottom: 5px;
+            font-family: monospace;
+            border-radius: 5px;
+        }
+
+        .talk-bubble-previous {
+            /* right arrow*/
+            position: relative;
+            width: 25%;
+            height: auto;
+            background-color: lightseagreen;
+            margin-right: 2px;
+            margin-top: 10px;
+            padding: 0 20px 0 20px;
+            float: left;
+            margin-bottom: 5px;
+            font-family: monospace;
+            border-radius: 10px;
+        }
+
+        .border {
+            border: 8px solid #666;
+        }
+
+        .round {
+            border-radius: 30px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+
+        }
+
+        /****************************** left arrow mark ******************************/
+        /* Right triangle, left side slightly down */
+        .tri-right.border.left-in:before {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: -40px;
+            right: auto;
+            top: 30px;
+            bottom: auto;
+            border: 20px solid;
+            border-color: #666 #666 transparent transparent;
+        }
+
+        .tri-right.left-in:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: -20px;
+            right: auto;
+            top: 15px;
+            bottom: auto;
+            border: 12px solid;
+            border-color: lightgreen lightgreen transparent transparent;
+        }
+
+        /*********************************** right arrow mark ******************************/
+        /* Right triangle, left side slightly down */
+        .tri-right.border.right-in:before {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: auto;
+            right: -40px;
+            top: 30px;
+            bottom: auto;
+            border: 20px solid;
+            border-color: #666 #666 transparent transparent;
+        }
+
+        .tri-right.right-in:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: auto;
+            right: -20px;
+            top: 15px;
+            bottom: auto;
+            border: 12px solid;
+            border-color: lightgreen transparent transparent lightgreen;
+        }
+
+        /*********************************** rigth arrow mark yes *********************************/
+        /* Right triangle, left side slightly down */
+        .tri-right.border.right-in-yes:before {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: auto;
+            right: -40px;
+            top: 30px;
+            bottom: auto;
+            border: 20px solid;
+            border-color: #666 #666 transparent transparent;
+        }
+
+        .tri-right.right-in-yes:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: auto;
+            right: -20px;
+            top: 15px;
+            bottom: auto;
+            border: 12px solid;
+            border-color: paleturquoise transparent transparent paleturquoise;
+        }
+
+        /******************************************* right arrow mark no ****************************************/
+        /* Right triangle, left side slightly down */
+        .tri-right.border.right-in-no:before {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: auto;
+            right: -40px;
+            top: 30px;
+            bottom: auto;
+            border: 20px solid;
+            border-color: #666 #666 transparent transparent;
+        }
+
+        .tri-right.right-in-no:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: auto;
+            right: -20px;
+            top: 15px;
+            bottom: auto;
+            border: 12px solid;
+            border-color: lightpink transparent transparent lightpink;
+        }
+
+        /************************************************** talk bubble contents *************************************************/
+        .talktext {
+            padding: 1em;
+            text-align: left;
+            color: #000;
+            line-height: 1.5em;
+        }
+
+        .talktext p {
+            /* remove webkit p margins */
+            -webkit-margin-before: 0em;
+            -webkit-margin-after: 0em;
+        }
+
+        .talktext1 {
+            padding: 1em;
+            text-align: left;
+            color: #000;
+            line-height: 1.5em;
+        }
+
+        .talktext1 p {
+            /* remove webkit p margins */
+            -webkit-margin-before: 0em;
+            -webkit-margin-after: 0em;
+        }
+
+        .talktext_previous {
+            padding: 1em;
+            text-align: left;
+            margin-top: 2px;
+            color: #000;
+            line-height: 1.5em;
+        }
+
+        .talktext_previous p {
+            /* remove webkit p margins */
+            -webkit-margin-before: 0em;
+            -webkit-margin-after: 0em;
+        }
+
+        .talktext_head {
+            color: #fff;
+            line-height: 1.5em;
+        }
+
+        #n1:hover {
+            background-color: linen;
+        }
+
+        /* Size for the image viewing part */
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .portrait {
+            height: 80px;
+            width: 30px;
+        }
+
+        .landscape {
+            height: 30px;
+            width: 80px;
+        }
+
+        .square {
+            height: 200px;
+            width: 400px;
+        }
+
+        /*https://stackoverflow.com/questions/3029422/how-do-i-auto-resize-an-image-to-fit-a-div-container*/
+    </style>
+</head>
+
+<body>
+        <header>
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7eccec;">
+                  <a class="navbar-brand" href="index.html" style="margin: 25px 120px 20px 50px">
+                    <img src="assets/img/sealogo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+                    Seal Conservation
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+            
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin: 20px 100px 20px 60px">
+                    <ul class="navbar-nav justify-content-end" style="margin-left: 50px" style="align-content: flex-end">
+                        <li class="nav-item" style="margin-right: 20px">
+                          <a class="nav-link" href="index.html">Home </a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 20px">
+                          <a class="nav-link" href="seal.html">Seals </a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 20px">
+                          <a class="nav-link" href="problem.html">Problems</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 20px">
+                          <a class="nav-link" href="quiz.html">Quiz</a>
+                        </li>
+                        <li class="nav-item dropdown" style="margin-right: 20px">
+                          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Reporting
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="heatmap.html"> Beach Cleanness Reporting </a>
+                            <a class="dropdown-item" href="injury_reporting.html"> Injured Marine Life Reporting </a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              Visualisation
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="getAllBeaches.html"> Beach Cleanness Map </a>
+                              <a class="dropdown-item" href="injuredmap.html"> Injured Marine Life Map </a>
+                            </div>
+                          </li>
+                    </div>
+            
+                    </ul>
+            
+                  </div>
+                </nav>
+            
+                <!-- end top -->
+              </header>
+
+    <section id="intro_quiz">
+            <h1 class="slogan">Quiz</h1>
+        </section>
+
+    <section id="services2" class="section">
+    <div class="tile2">
+        <h1 align="center"> Quiz </h1>
+        <strong>
+            <h2 align="center"> Test your knowledge </h2>
+        </strong><br><br>
+
+        <a onClick="showQuestion01();" href="javascript:void(0);">
+            <div id="head1" class="talk-bubble-head-not-answered bgOrange">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 1 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion02();" href="javascript:void(0);">
+            <div id="head2" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 2 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion03();" href="javascript:void(0);">
+            <div id="head3" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 3 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion04();" href="javascript:void(0);">
+            <div id="head4" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 4 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion05();" href="javascript:void(0);">
+            <div id="head5" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 5 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion06();" href="javascript:void(0);">
+            <div id="head6" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 6 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion07();" href="javascript:void(0);">
+            <div id="head7" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 7 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion08();" href="javascript:void(0);">
+            <div id="head8" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 8 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion09();" href="javascript:void(0);">
+            <div id="head9" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 9 </p>
+                </div>
+            </div>
+        </a>
+        <a onClick="showQuestion10();" href="javascript:void(0);">
+            <div id="head10" class="talk-bubble-head-not-answered">
+                <div class="talktext_head">
+                    <p style="color:#fff"> 10 </p>
+                </div>
+            </div>
+        </a>
+        <script>
+            //Question 1
+            function showQuestion01() {
+
+                var usr = $("#Quest1").val();
+                // alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes1").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no1").css("display", "block");
+
+                } else {
+                    $("#head1").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head1").addClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_1").css("display", "block");
+                $("#question_2").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_9").css("display", "none");
+                $("#question_10").css("display", "none");
+
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_1").offset().top }, 1000);
+            }
+
+            //Question 2
+            function showQuestion02() {
+
+
+                var usr = $("#Quest2").val();
+                //alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes2").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no2").css("display", "block");
+                } else {
+                    $("#head2").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head2").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_2").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_9").css("display", "none");
+                $("#question_10").css("display", "none");
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_2").offset().top }, 1000);
+            }
+
+
+            //Question 3
+            function showQuestion03() {
+                $("#question_3").css("display", "block");
+
+                var usr = $("#Quest3").val();
+                //alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes3").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no3").css("display", "block");
+                } else {
+                    $("#head3").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head3").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_3").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_2").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_9").css("display", "none");
+                $("#question_10").css("display", "none");
+
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_3").offset().top }, 1000);
+            }
+
+            //Question 4
+            function showQuestion04() {
+
+
+                var usr = $("#Quest4").val();
+                //alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes4").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no4").css("display", "block");
+                } else {
+                    $("#head4").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head4").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_4").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_2").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_9").css("display", "none");
+                $("#question_10").css("display", "none");
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_4").offset().top }, 1000);
+            }
+
+            //Question 5
+            function showQuestion05() {
+
+
+                var usr = $("#Quest5").val();
+                //alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes5").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no5").css("display", "block");
+                } else {
+                    $("#head5").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head5").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_5").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_2").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_9").css("display", "none");
+                $("#question_10").css("display", "none");
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_5").offset().top }, 1000);
+            }
+
+            //Question 6
+            function showQuestion06() {
+
+
+                var usr = $("#Quest6").val();
+                //alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes6").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no6").css("display", "block");
+                } else {
+                    $("#head6").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head6").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_6").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_2").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_9").css("display", "none");
+                $("#question_10").css("display", "none");
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_6").offset().top }, 1000);
+            }
+
+            //Question 7
+            function showQuestion07() {
+
+                var usr = $("#Quest7").val();
+                // alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes7").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no7").css("display", "block");
+
+                } else {
+                    $("#head7").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head7").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_7").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_2").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_9").css("display", "none");
+                $("#question_10").css("display", "none");
+
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_7").offset().top }, 1000);
+            }
+
+            //Question 8
+            function showQuestion08() {
+
+                var usr = $("#Quest8").val();
+                // alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes8").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no8").css("display", "block");
+
+                } else {
+                    $("#head8").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head8").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_8").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_2").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_9").css("display", "none");
+                $("#question_10").css("display", "none");
+
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_8").offset().top }, 1000);
+            }
+
+            //Question 9
+            function showQuestion09() {
+
+                var usr = $("#Quest9").val();
+                // alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes9").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no9").css("display", "block");
+
+                } else {
+                    $("#head9").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head9").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head10").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_9").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_2").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_10").css("display", "none");
+
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_9").offset().top }, 1000);
+            }
+
+            //Question 10
+            function showQuestion10() {
+
+                var usr = $("#Quest10").val();
+                // alert(usr);
+                if (usr == 'Yes') {
+                    $("#yes10").css("display", "block");
+
+                } else if (usr == 'No') {
+                    $("#no10").css("display", "block");
+
+                } else {
+                    $("#head10").addClass('bgRed');
+                }
+
+                //Assigning current question color.
+                $("#head10").addClass('bgOrange');
+                $("#head1").removeClass('bgOrange');
+                $("#head2").removeClass('bgOrange');
+                $("#head3").removeClass('bgOrange');
+                $("#head4").removeClass('bgOrange');
+                $("#head5").removeClass('bgOrange');
+                $("#head6").removeClass('bgOrange');
+                $("#head7").removeClass('bgOrange');
+                $("#head8").removeClass('bgOrange');
+                $("#head9").removeClass('bgOrange');
+
+                //Questions removed other than current.
+                $("#question_10").css("display", "block");
+                $("#question_1").css("display", "none");
+                $("#question_2").css("display", "none");
+                $("#question_3").css("display", "none");
+                $("#question_4").css("display", "none");
+                $("#question_5").css("display", "none");
+                $("#question_6").css("display", "none");
+                $("#question_7").css("display", "none");
+                $("#question_8").css("display", "none");
+                $("#question_9").css("display", "none");
+
+
+                //quiz_1 shown - Full Quiz Section
+                $(".quiz_1").css("display", "block");
+                $("#thank_you").css("display", "none");
+                $('html, body').animate({ scrollTop: $("#question_10").offset().top }, 1000);
+            }
+        </script>
+        <!-------------------- Question 1 -------------------->
+        <div class="quiz_1">
+            <section id="question_1" class="section question_1" style="display:block">
+                <div id="sa1" class="talk-bubble tri-right left-in" style="cursor: auto">
+                    <div class="talktext">
+                        <p style="color:#000"> What happens to plastic waste? </p>
+                    </div>
+                </div>
+                <div id="select_1" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQuesOpt1();" href="javascript:void(0);">
+                    <div id="a11" class="talk-bubble-center">
+                        <div id="qq1" class="talktext">
+                            <p style="color:#000"> Nothing, it's biodegradable and eventually disintegrates </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQuesOpt2();" href="javascript:void(0);">
+                    <div id="a12" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> All plastic is recycled </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQuesOpt3();" href="javascript:void(0);">
+                    <div id="a13" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> It never fully goes away, it breaks into little pieces </p>
+                        </div>
+                    </div>
+                </a>
+                <input type="hidden" name="Quest1" value="" id="Quest1">
+                <div id="q11" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Nothing, it's biodegradable and eventually disintegrates </p>
+
+                    </div>
+                </div>
+                <div id="q12" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> All plastic is recycled </p>
+                    </div>
+                </div>
+                <div id="q13" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> It never fully goes away, it breaks into little pieces </p>
+                    </div>
+                </div>
+
+
+                <!-------------------- Answer 1 - yes -------------------->
+                <section id="yes1" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Correct! It never completely goes away. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Most plastics are derived from propylene, which takes anywhere from
+                                decades to hundreds of years to break down. </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!--
+          <p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+-->
+
+                <!-------------------- Answer 1 - no -------------------->
+                <section id="no1" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Good try, but...it never fully goes away, it breaks into little
+                                pieces. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Common place items like plastic straws can take up to 200 years to
+                                biodegrade! </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="continue11" class="section" style="display:none">
+                    <a data-toggle="collapse" href="#collapseExample1" aria-expanded="false"
+                        aria-controls="collapseExample1" align="center">
+                        <div class="talk-bubble-center">
+                            <p style="color:#808080"><i>Click to View picture</i></p>
+                        </div>
+                    </a>
+                    <div class="talk-bubble-collapse">
+                        <div class="collapse" id="collapseExample1" align="center" >
+                            <div class="square" align="center" >
+                                <img src="assets/img/quiz_1_p1.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <a data-toggle="collapse" href="#collapseExample1s" aria-expanded="false"
+                        aria-controls="collapseExample1s" align="center">
+                        <div class="talk-bubble-center">
+                            <p style="color:#808080"><i>Click to View stats</i></p>
+                        </div>
+                    </a>
+                    <div class="talk-bubble-collapse">
+                        <div class="collapse" id="collapseExample1s" align="center" >
+                            <div class="square" align="center" >
+                                <img src="assets/img/q1.2.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="select_11" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion02();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+            </section>
+
+            <!-------------------- Javascript 1 -------------------->
+            <script>
+
+
+                function init() {
+                    // Clear forms here
+                    document.getElementById("Quest1").value = "";
+                    document.getElementById("Quest2").value = "";
+                    document.getElementById("Quest3").value = "";
+                    document.getElementById("Quest4").value = "";
+                    document.getElementById("Quest5").value = "";
+                    document.getElementById("Quest6").value = "";
+                    document.getElementById("Quest7").value = "";
+                    document.getElementById("Quest8").value = "";
+                    document.getElementById("Quest9").value = "";
+                    document.getElementById("Quest10").value = "";
+                }
+                window.onload = init;
+                function showThankYou() {
+                    $("#thank_you").css("display", "block");
+                    $(".quiz_1").css("display", "none");
+                    $('html, body').animate({ scrollTop: $("#question_1").offset().top }, 1000);
+                }
+
+
+                function showQuesOpt1() {
+                    $("#no1").css("display", "block");
+                    $("#yes1").css("display", "none");
+                    $("#thank_you").css("display", "none");
+                    $("#q11").css("display", "block");
+                    $("#a11").css("display", "none");
+                    $("#a12").css("display", "none");
+                    $("#a13").css("display", "none");
+                    $("#select_1").css("display", "none");
+                    var usr = $("#Quest1").val('No');
+                    $("#continue11").css("display", "block");
+                    $('html, body').animate({ scrollTop: $("#question_1").offset().top }, 1000);
+                }
+                function showQuesOpt2() {
+
+
+                    $("#no1").css("display", "block");
+                    $("#yes1").css("display", "none");
+                    $("#thank_you").css("display", "none");
+                    $("#q12").css("display", "block");
+                    $("#a11").css("display", "none");
+                    $("#a12").css("display", "none");
+                    $("#a13").css("display", "none");
+                    $("#select_1").css("display", "none");
+                    var usr = $("#Quest1").val('No');
+                    $("#continue11").css("display", "block");
+
+                    $('html, body').animate({ scrollTop: $("#question_1").offset().top }, 1000);
+                }
+                function showQuesOpt3() {
+                    $("#no1").css("display", "none");
+                    $("#yes1").css("display", "block");
+                    $("#thank_you").css("display", "none");
+                    $("#q13").css("display", "block");
+                    $("#a11").css("display", "none");
+                    $("#a12").css("display", "none");
+                    $("#a13").css("display", "none");
+                    $("#select_1").css("display", "none");
+                    var usr = $("#Quest1").val('Yes');
+                    $("#continue11").css("display", "block");
+
+                    $('html, body').animate({ scrollTop: $("#question_1").offset().top }, 1000);
+                }
+            </script>
+
+            <!-------------------- Question 2 -------------------->
+            <section id="question_2" class="section question_2" style="display:none">
+                <div id="sa2" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000"> Why is plastic dangerous to marine life? </p>
+                    </div>
+                </div>
+                <div id="select_2" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues2Opt1();" href="javascript:void(0);">
+                    <div id="a21" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> They can get entangled in plastic </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues2Opt2();" href="javascript:void(0);">
+                    <div id="a22" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> They mistake it for food and are unable to digest it </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues2Opt3();" href="javascript:void(0);">
+                    <div id="a23" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> They can get injured by colliding with bigger pieces of plastic </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues2Opt4();" href="javascript:void(0);">
+                    <div id="a24" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> All of the above </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q21" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> They can get entangled in plastic </p>
+                    </div>
+                </div>
+                <div id="q22" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> They mistake it for food and are unable to digest it </p>
+                    </div>
+                </div>
+                <div id="q23" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> They can get injured by colliding with bigger pieces of plastic </p>
+                    </div>
+                </div>
+                <div id="q24" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> All of the above </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest2" value="" id="Quest2">
+
+                <!-------------------- Answer 2 - yes -------------------->
+                <section id="yes2" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Great job! </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Marine animals are affected through entanglement, ingestion and
+                                collision. </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 2 - no -------------------->
+                <section id="no2" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Good try, but it is all of the above </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Marine animals are affected through entanglement, ingestion and
+                                collision. </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue22" class="section" style="display:none">
+                    <a data-toggle="collapse" href="#collapseExample2" aria-expanded="false"
+                        aria-controls="collapseExample2" align="center">
+                        <div class="talk-bubble-center">
+                            <p style="color:#808080"><i>Click to View picture</i></p>
+                        </div>
+                    </a>
+                    <div class="talk-bubble-collapse">
+                        <div class="collapse" id="collapseExample2" align="center" >
+                            <div class="square" align="center" >
+                                <img src="assets/img/quiz_2_p1.jpg">
+                            </div>
+                            <br>
+                            <div class="square" align="center" >
+                                <img src="assets/img/quiz_2_p2.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="select_21" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion03();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+
+                <!-------------------- Javascript 2 -------------------->
+                <script>
+
+
+                    function showQues2Opt1() {
+                        $("#no2").css("display", "block");
+                        $("#yes2").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q21").css("display", "block");
+                        //hide Options
+                        $("#a21").css("display", "none");
+                        $("#a22").css("display", "none");
+                        $("#a23").css("display", "none");
+                        $("#a24").css("display", "none");
+                        $("#select_2").css("display", "none");
+                        var usr = $("#Quest2").val('No');
+                        $("#continue22").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_2").offset().top }, 1000);
+                    }
+                    function showQues2Opt2() {
+                        $("#no2").css("display", "block");
+                        $("#yes2").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q22").css("display", "block");
+                        //hide Options
+                        $("#a21").css("display", "none");
+                        $("#a22").css("display", "none");
+                        $("#a23").css("display", "none");
+                        $("#a24").css("display", "none");
+                        $("#select_2").css("display", "none");
+                        var usr = $("#Quest2").val('No');
+                        $("#continue22").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_2").offset().top }, 1000);
+                    }
+                    function showQues2Opt3() {
+                        $("#no2").css("display", "block");
+                        $("#yes2").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q23").css("display", "block");
+                        //hide Options
+                        $("#a21").css("display", "none");
+                        $("#a22").css("display", "none");
+                        $("#a23").css("display", "none");
+                        $("#a24").css("display", "none");
+                        $("#select_2").css("display", "none");
+                        var usr = $("#Quest2").val('No');
+                        $("#continue22").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_2").offset().top }, 1000);
+                    }
+                    function showQues2Opt4() {
+                        $("#no2").css("display", "none");
+                        $("#yes2").css("display", "block");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q24").css("display", "block");
+                        //hide Options
+                        $("#a21").css("display", "none");
+                        $("#a22").css("display", "none");
+                        $("#a23").css("display", "none");
+                        $("#a24").css("display", "none");
+                        $("#select_2").css("display", "none");
+                        var usr = $("#Quest2").val('Yes');
+                        $("#continue22").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_2").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+            </section>
+
+
+
+
+            <!-------------------- Question 3 -------------------->
+            <section id="question_3" class="section question_3" style="display:none">
+                <div id="sa3" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000"> How many sea creatures have plastic inside them? </p>
+                    </div>
+                </div>
+                <div id="select_3" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues3Opt1();" href="javascript:void(0);">
+                    <div id="a31" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> A few (10% or less) </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues3Opt2();" href="javascript:void(0);">
+                    <div id="a32" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Some (30-40%) </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues3Opt3();" href="javascript:void(0);">
+                    <div id="a33" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Almost all (80%-100%) </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q31" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> A few (10% or less) </p>
+                    </div>
+                </div>
+                <div id="q32" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Some (30-40%) </p>
+                    </div>
+                </div>
+                <div id="q33" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Almost all (80%-100%) </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest3" value="" id="Quest3">
+
+                <!-------------------- Answer 3 - yes -------------------->
+                <section id="yes3" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Good job! That was a tricky question. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Almost all marine animals have plastic in them. Plastics break into
+                                tiny pieces and mixes into plankton, which is at the heart of the marine food chain.
+                            </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 3 - no -------------------->
+                <section id="no3" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Good try, but the answer is almost all </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Nearly every marine animal has plastic in them. Plastics break into
+                                tiny pieces and mixes into plankton, which is at the heart of the marine food chain.
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue33" class="section" style="display:none">
+                    <a data-toggle="collapse" href="#collapseExample3s" aria-expanded="false"
+                        aria-controls="collapseExample1s" align="center">
+                        <div class="talk-bubble-center">
+                            <p style="color:#808080"><i>Click to View: plastic recovered in plankton</i></p>
+                        </div>
+                    </a>
+                    <div class="talk-bubble-collapse">
+                        <div class="collapse" id="collapseExample3s" align="center" >
+                            <div class="square" align="center" >
+                                <img src="assets/img/q3.2.JPG">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="select_11" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion04();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+
+                <!-------------------- Javascript 3 -------------------->
+                <script>
+
+
+                    function showQues3Opt1() {
+                        $("#no3").css("display", "block");
+                        $("#yes3").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q31").css("display", "block");
+                        //hide Options
+                        $("#a31").css("display", "none");
+                        $("#a32").css("display", "none");
+                        $("#a33").css("display", "none");
+                        $("#a34").css("display", "none");
+                        $("#select_3").css("display", "none");
+                        var usr = $("#Quest3").val('No');
+                        $("#continue33").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_3").offset().top }, 1000);
+                    }
+                    function showQues3Opt2() {
+                        $("#no3").css("display", "block");
+                        $("#yes3").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q32").css("display", "block");
+                        //hide Options
+                        $("#a31").css("display", "none");
+                        $("#a32").css("display", "none");
+                        $("#a33").css("display", "none");
+                        $("#a34").css("display", "none");
+                        $("#select_3").css("display", "none");
+                        var usr = $("#Quest3").val('No');
+                        $("#continue33").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_3").offset().top }, 1000);
+                    }
+
+                    function showQues3Opt3() {
+                        $("#yes3").css("display", "block");
+                        $("#no3").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q33").css("display", "block");
+                        //hide Options
+                        $("#a31").css("display", "none");
+                        $("#a32").css("display", "none");
+                        $("#a33").css("display", "none");
+                        $("#a34").css("display", "none");
+                        $("#select_3").css("display", "none");
+                        var usr = $("#Quest3").val('Yes');
+                        $("#continue33").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_3").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+
+            </section>
+
+
+            <!-------------------- Question 4 -------------------->
+            <section id="question_4" class="section question_4" style="display:none">
+                <div id="sa4" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000"> Where does the majority of plastic waste end up? </p>
+                    </div>
+                </div>
+                <div id="select_4" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues4Opt1();" href="javascript:void(0);">
+                    <div id="a41" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Recycled </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues4Opt2();" href="javascript:void(0);">
+                    <div id="a42" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Burned </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues4Opt3();" href="javascript:void(0);">
+                    <div id="a43" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Landfills </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues4Opt4();" href="javascript:void(0);">
+                    <div id="a44" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Oceans </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q41" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Recycled </p>
+                    </div>
+                </div>
+                <div id="q42" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Burned </p>
+                    </div>
+                </div>
+                <div id="q43" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Landfills </p>
+                    </div>
+                </div>
+                <div id="q44" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Oceans </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest4" value="" id="Quest4">
+
+                <!-------------------- Answer 4 - yes -------------------->
+                <section id="yes4" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> You are right. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Majority of plastic ends up in the ocean through deliberate dumping
+                                of garbage into waterways, poor waste infrastructures and littering. </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 4 - no -------------------->
+                <section id="no4" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> No, it is not the right answer. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Majority of plastic ends up in the ocean through deliberate dumping
+                                of garbage into waterways, poor waste infrastructures and littering. </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue44" class="section" style="display:none">
+                    <a data-toggle="collapse" href="#collapseExample4s" aria-expanded="false"
+                        aria-controls="collapseExample1s" align="center">
+                        <div class="talk-bubble-center">
+                            <p style="color:#808080"><i>Click to View stats</i></p>
+                        </div>
+                    </a>
+                    <div class="talk-bubble-collapse">
+                        <div class="collapse" id="collapseExample4s" align="center" >
+                            <div class="square" align="center" >
+                                <img src="assets/img/q4.2.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="select_11" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion05();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+                <!-------------------- Javascript 4 -------------------->
+                <script>
+
+
+                    function showQues4Opt1() {
+                        $("#no4").css("display", "block");
+                        $("#yes4").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q41").css("display", "block");
+                        //hide Options
+                        $("#a41").css("display", "none");
+                        $("#a42").css("display", "none");
+                        $("#a43").css("display", "none");
+                        $("#a44").css("display", "none");
+                        $("#select_4").css("display", "none");
+                        var usr = $("#Quest4").val('No');
+                        $("#continue44").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_4").offset().top }, 1000);
+                    }
+                    function showQues4Opt2() {
+                        $("#no4").css("display", "block");
+                        $("#yes4").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q42").css("display", "block");
+                        //hide Options
+                        $("#a41").css("display", "none");
+                        $("#a42").css("display", "none");
+                        $("#a43").css("display", "none");
+                        $("#a44").css("display", "none");
+                        $("#select_4").css("display", "none");
+                        var usr = $("#Quest4").val('No');
+                        $("#continue44").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_4").offset().top }, 1000);
+                    }
+                    function showQues4Opt3() {
+                        $("#no4").css("display", "block");
+                        $("#yes4").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q43").css("display", "block");
+                        //hide Options
+                        $("#a41").css("display", "none");
+                        $("#a42").css("display", "none");
+                        $("#a43").css("display", "none");
+                        $("#a44").css("display", "none");
+                        $("#select_4").css("display", "none");
+                        var usr = $("#Quest4").val('No');
+                        $("#continue44").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_4").offset().top }, 1000);
+                    }
+                    function showQues4Opt4() {
+                        $("#no4").css("display", "none");
+                        $("#yes4").css("display", "block");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q44").css("display", "block");
+                        //hide Options
+                        $("#a41").css("display", "none");
+                        $("#a42").css("display", "none");
+                        $("#a43").css("display", "none");
+                        $("#a44").css("display", "none");
+                        $("#select_4").css("display", "none");
+                        var usr = $("#Quest4").val('Yes');
+                        $("#continue44").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_4").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+            </section>
+
+            <!-------------------- Question 5 -------------------->
+            <section id="question_5" class="section question_5" style="display:none">
+                <div id="sa5" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000"> How many million tons of plastic end up in the ocean each year? </p>
+                    </div>
+                </div>
+                <div id="select_5" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues5Opt1();" href="javascript:void(0);">
+                    <div id="a51" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 1 million tons </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues5Opt2();" href="javascript:void(0);">
+                    <div id="a52" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 3 million tons </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues5Opt3();" href="javascript:void(0);">
+                    <div id="a53" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 8 million tons </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues5Opt4();" href="javascript:void(0);">
+                    <div id="a54" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 25 million tons </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q51" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 1 million tons </p>
+                    </div>
+                </div>
+                <div id="q52" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 3 million tons </p>
+                    </div>
+                </div>
+                <div id="q53" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 8 million tons </p>
+                    </div>
+                </div>
+                <div id="q54" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 25 million tons </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest5" value="" id="Quest5">
+
+                <!-------------------- Answer 5 - yes -------------------->
+                <section id="yes5" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> You are right. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> It is 8 million tons! That's the equivalent of dumping one garbage
+                                truck full of plastic into the ocean per minute. </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 5 - no -------------------->
+                <section id="no5" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Good try, this is a tricky one. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> It is actually 8 million tons! That's the equivalent of dumping one
+                                garbage truck full of plastic into the ocean per minute. </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue55" class="section" style="display:none">
+
+                    <div id="select_51" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion06();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+
+                <!-------------------- Javascript 5 -------------------->
+                <script>
+
+
+                    function showQues5Opt1() {
+                        $("#no5").css("display", "block");
+                        $("#yes5").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q51").css("display", "block");
+                        //hide Options
+                        $("#a51").css("display", "none");
+                        $("#a52").css("display", "none");
+                        $("#a53").css("display", "none");
+                        $("#a54").css("display", "none");
+                        $("#select_5").css("display", "none");
+                        var usr = $("#Quest5").val('No');
+                        $("#continue55").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_5").offset().top }, 1000);
+                    }
+                    function showQues5Opt2() {
+                        $("#no5").css("display", "block");
+                        $("#yes5").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q52").css("display", "block");
+                        //hide Options
+                        $("#a51").css("display", "none");
+                        $("#a52").css("display", "none");
+                        $("#a53").css("display", "none");
+                        $("#a54").css("display", "none");
+                        $("#select_5").css("display", "none");
+                        var usr = $("#Quest5").val('No');
+                        $("#continue55").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_5").offset().top }, 1000);
+                    }
+                    function showQues5Opt3() {
+                        $("#no5").css("display", "none");
+                        $("#yes5").css("display", "block");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q53").css("display", "block");
+                        //hide Options
+                        $("#a51").css("display", "none");
+                        $("#a52").css("display", "none");
+                        $("#a53").css("display", "none");
+                        $("#a54").css("display", "none");
+                        $("#select_5").css("display", "none");
+                        var usr = $("#Quest5").val('Yes');
+                        $("#continue55").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_5").offset().top }, 1000);
+                    }
+                    function showQues5Opt4() {
+                        $("#no5").css("display", "block");
+                        $("#yes5").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q54").css("display", "block");
+                        //hide Options
+                        $("#a51").css("display", "none");
+                        $("#a52").css("display", "none");
+                        $("#a53").css("display", "none");
+                        $("#a54").css("display", "none");
+                        $("#select_5").css("display", "none");
+                        var usr = $("#Quest5").val('No');
+                        $("#continue55").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_5").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+            </section>
+
+
+            <!-------------------- Question 6 -------------------->
+            <section id="question_6" class="section question_6" style="display:none">
+                <div id="sa6" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000">By what year do scientists predict plastic will outweigh the fish in the
+                            ocean? </p>
+                    </div>
+                </div>
+                <div id="select_6" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues6Opt1();" href="javascript:void(0);">
+                    <div id="a61" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 2020 </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues6Opt2();" href="javascript:void(0);">
+                    <div id="a62" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 2050 </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues6Opt3();" href="javascript:void(0);">
+                    <div id="a63" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 2100 </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues6Opt4();" href="javascript:void(0);">
+                    <div id="a64" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 2250 </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q61" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 2020 </p>
+                    </div>
+                </div>
+                <div id="q62" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 2050 </p>
+                    </div>
+                </div>
+                <div id="q63" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 2100 </p>
+                    </div>
+                </div>
+                <div id="q64" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 2250 </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest6" value="" id="Quest6">
+
+                <!-------------------- Answer 6 - yes -------------------->
+                <section id="yes6" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Exactly right! </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> It is 2050. Currently, the ratio of plastic to fish is 1:3. </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 6 - no -------------------->
+                <section id="no6" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Unfortunately, you're wrong. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> It is 2050. Currently, the ratio of plastic to fish is 1:3. </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue66" class="section" style="display:none">
+
+                    <div id="select_61" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion07();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+
+                <!-------------------- Javascript 6 -------------------->
+                <script>
+
+
+                    function showQues6Opt1() {
+                        $("#no6").css("display", "block");
+                        $("#yes6").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q61").css("display", "block");
+                        //hide Options
+                        $("#a61").css("display", "none");
+                        $("#a62").css("display", "none");
+                        $("#a63").css("display", "none");
+                        $("#a64").css("display", "none");
+                        $("#select_6").css("display", "none");
+                        var usr = $("#Quest6").val('No');
+                        $("#continue66").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_6").offset().top }, 1000);
+                    }
+                    function showQues6Opt2() {
+                        $("#no6").css("display", "none");
+                        $("#yes6").css("display", "block");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q62").css("display", "block");
+                        //hide Options
+                        $("#a61").css("display", "none");
+                        $("#a62").css("display", "none");
+                        $("#a63").css("display", "none");
+                        $("#a64").css("display", "none");
+                        $("#select_6").css("display", "none");
+                        var usr = $("#Quest6").val('Yes');
+                        $("#continue66").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_6").offset().top }, 1000);
+                    }
+                    function showQues6Opt3() {
+                        $("#no6").css("display", "block");
+                        $("#yes6").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q63").css("display", "block");
+                        //hide Options
+                        $("#a61").css("display", "none");
+                        $("#a62").css("display", "none");
+                        $("#a63").css("display", "none");
+                        $("#a64").css("display", "none");
+                        $("#select_6").css("display", "none");
+                        var usr = $("#Quest6").val('No');
+                        $("#continue66").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_6").offset().top }, 1000);
+                    }
+                    function showQues6Opt4() {
+                        $("#no6").css("display", "block");
+                        $("#yes6").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q64").css("display", "block");
+                        //hide Options
+                        $("#a61").css("display", "none");
+                        $("#a62").css("display", "none");
+                        $("#a63").css("display", "none");
+                        $("#a64").css("display", "none");
+                        $("#select_6").css("display", "none");
+                        var usr = $("#Quest6").val('No');
+                        $("#continue66").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_6").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+            </section>
+
+            <!-------------------- Question 7 -------------------->
+            <section id="question_7" class="section question_7" style="display:none">
+                <div id="sa7" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000"> How large can a male sea lion grow? </p>
+                    </div>
+                </div>
+                <div id="select_7" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues7Opt1();" href="javascript:void(0);">
+                    <div id="a71" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 350kg </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues7Opt2();" href="javascript:void(0);">
+                    <div id="a72" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 100kg </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues7Opt3();" href="javascript:void(0);">
+                    <div id="a73" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> 150kg </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q71" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 350kg </p>
+                    </div>
+                </div>
+                <div id="q72" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 100kg </p>
+                    </div>
+                </div>
+                <div id="q73" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> 150kg </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest7" value="" id="Quest7">
+
+                <!-------------------- Answer 7 - yes -------------------->
+                <section id="yes7" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Correct! </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> These magnificent creatures can grow up to 350kg. </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 7 - no -------------------->
+                <section id="no7" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Sorry, that's incorrect! </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Sea Lions can grow up to a whopping 350kg. </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue77" class="section" style="display:none">
+
+                    <div id="select_71" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion08();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+
+                <!-------------------- Javascript 7 -------------------->
+                <script>
+
+
+                    function showQues7Opt1() {
+                        $("#no7").css("display", "none");
+                        $("#yes7").css("display", "block");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q71").css("display", "block");
+                        //hide Options
+                        $("#a71").css("display", "none");
+                        $("#a72").css("display", "none");
+                        $("#a73").css("display", "none");
+                        //$("#a74").css("display", "none");
+                        $("#select_7").css("display", "none");
+                        var usr = $("#Quest7").val('Yes');
+                        $("#continue77").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_7").offset().top }, 1000);
+                    }
+                    function showQues7Opt2() {
+                        $("#no7").css("display", "block");
+                        $("#yes7").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q72").css("display", "block");
+                        //hide Options
+                        $("#a71").css("display", "none");
+                        $("#a72").css("display", "none");
+                        $("#a73").css("display", "none");
+                        //$("#a74").css("display", "none");
+                        $("#select_7").css("display", "none");
+                        var usr = $("#Quest7").val('No');
+                        $("#continue77").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_7").offset().top }, 1000);
+                    }
+
+                    function showQues7Opt3() {
+                        $("#no7").css("display", "block");
+                        $("#yes7").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q73").css("display", "block");
+                        //hide Options
+                        $("#a71").css("display", "none");
+                        $("#a72").css("display", "none");
+                        $("#a73").css("display", "none");
+                        //$("#a74").css("display", "none");
+                        $("#select_7").css("display", "none");
+                        var usr = $("#Quest7").val('No');
+                        $("#continue77").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_7").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+
+            </section>
+
+            <!-------------------- Question 8 -------------------->
+            <section id="question_8" class="section question_8" style="display:none">
+                <div id="sa8" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000"> What are the biggest threats to Australian seals? </p>
+                    </div>
+                </div>
+                <div id="select_8" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues8Opt1();" href="javascript:void(0);">
+                    <div id="a81" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Hunting </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues8Opt2();" href="javascript:void(0);">
+                    <div id="a82" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Seals fighting each other </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues8Opt3();" href="javascript:void(0);">
+                    <div id="a83" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Pollution & marine debris </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues8Opt4();" href="javascript:void(0);">
+                    <div id="a84" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Oil spills </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q81" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Hunting </p>
+                    </div>
+                </div>
+                <div id="q82" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Seals fighting each other </p>
+                    </div>
+                </div>
+                <div id="q83" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Pollution & marine debris </p>
+                    </div>
+                </div>
+                <div id="q84" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Oil spills </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest8" value="" id="Quest8">
+
+                <!-------------------- Answer 8 - yes -------------------->
+                <section id="yes8" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Spot on! </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Plastic pollution and debris like abandoned fishing gear affect seals
+                                through ingestion or entaglement. </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 8 - no -------------------->
+                <section id="no8" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Sorry, that is incorrect! </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Plastic pollution and debris like abandoned fishing gear affect seals
+                                through ingestion or entaglement. </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue88" class="section" style="display:none">
+
+                    <div id="select_81" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion09();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+
+                <!-------------------- Javascript 8 -------------------->
+                <script>
+
+
+                    function showQues8Opt1() {
+                        $("#no8").css("display", "block");
+                        $("#yes8").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q81").css("display", "block");
+                        //hide Options
+                        $("#a81").css("display", "none");
+                        $("#a82").css("display", "none");
+                        $("#a83").css("display", "none");
+                        $("#a84").css("display", "none");
+                        $("#select_8").css("display", "none");
+                        var usr = $("#Quest8").val('No');
+                        $("#continue88").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_8").offset().top }, 1000);
+                    }
+                    function showQues8Opt2() {
+                        $("#no8").css("display", "block");
+                        $("#yes8").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q82").css("display", "block");
+                        //hide Options
+                        $("#a81").css("display", "none");
+                        $("#a82").css("display", "none");
+                        $("#a83").css("display", "none");
+                        $("#a84").css("display", "none");
+                        $("#select_8").css("display", "none");
+                        var usr = $("#Quest8").val('No');
+                        $("#continue88").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_8").offset().top }, 1000);
+                    }
+                    function showQues8Opt3() {
+                        $("#no8").css("display", "none");
+                        $("#yes8").css("display", "block");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q83").css("display", "block");
+                        //hide Options
+                        $("#a81").css("display", "none");
+                        $("#a82").css("display", "none");
+                        $("#a83").css("display", "none");
+                        $("#a84").css("display", "none");
+                        $("#select_8").css("display", "none");
+                        var usr = $("#Quest8").val('Yes');
+                        $("#continue88").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_8").offset().top }, 1000);
+                    }
+                    function showQues8Opt4() {
+                        $("#no8").css("display", "block");
+                        $("#yes8").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q84").css("display", "block");
+                        //hide Options
+                        $("#a81").css("display", "none");
+                        $("#a82").css("display", "none");
+                        $("#a83").css("display", "none");
+                        $("#a84").css("display", "none");
+                        $("#select_8").css("display", "none");
+                        var usr = $("#Quest8").val('No');
+                        $("#continue88").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_8").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+            </section>
+
+            <!-------------------- Question 9 -------------------->
+            <section id="question_9" class="section question_9" style="display:none">
+                <div id="sa9" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000"> How is the humpback whale used for the economy? </p>
+                    </div>
+                </div>
+                <div id="select_9" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues9Opt1();" href="javascript:void(0);">
+                    <div id="a91" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Whale watching as a tourist attraction </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues9Opt2();" href="javascript:void(0);">
+                    <div id="a92" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Valuable skin </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues9Opt3();" href="javascript:void(0);">
+                    <div id="a93" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> Valuable teeth </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues9Opt4();" href="javascript:void(0);">
+                    <div id="a94" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> All of the above </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q91" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Whale watching as a tourist attraction </p>
+                    </div>
+                </div>
+                <div id="q92" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Valuable skin </p>
+                    </div>
+                </div>
+                <div id="q93" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> Valuable teeth </p>
+                    </div>
+                </div>
+                <div id="q94" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> All of the above </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest9" value="" id="Quest9">
+
+                <!-------------------- Answer 9 - yes -------------------->
+                <section id="yes9" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> You are right. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Whale watching can impact their natural behaviour, such as their
+                                ability to feed or take care of their young. Boats can collide with whales too,
+                                endagering everyone. </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 9 - no -------------------->
+                <section id="no9" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> No, it is not the right answer. </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Whale watching is a lucrative tourist attraction. It can impact their
+                                natural behaviour, such as their ability to feed or take care of their young. Boats can
+                                collide with whales too, endangering everyone. </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue99" class="section" style="display:none">
+
+                    <div id="select_91" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showQuestion10();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Continue >> </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+
+                <!-------------------- Javascript 9 -------------------->
+                <script>
+
+
+                    function showQues9Opt1() {
+                        $("#no9").css("display", "none");
+                        $("#yes9").css("display", "block");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q91").css("display", "block");
+                        //hide Options
+                        $("#a91").css("display", "none");
+                        $("#a92").css("display", "none");
+                        $("#a93").css("display", "none");
+                        $("#a94").css("display", "none");
+                        $("#select_9").css("display", "none");
+                        var usr = $("#Quest9").val('Yes');
+                        $("#continue99").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_9").offset().top }, 1000);
+                    }
+                    function showQues9Opt2() {
+                        $("#no9").css("display", "block");
+                        $("#yes9").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q92").css("display", "block");
+                        //hide Options
+                        $("#a91").css("display", "none");
+                        $("#a92").css("display", "none");
+                        $("#a93").css("display", "none");
+                        $("#a94").css("display", "none");
+                        $("#select_9").css("display", "none");
+                        var usr = $("#Quest9").val('No');
+                        $("#continue99").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_9").offset().top }, 1000);
+                    }
+                    function showQues9Opt3() {
+                        $("#no9").css("display", "block");
+                        $("#yes9").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q93").css("display", "block");
+                        //hide Options
+                        $("#a91").css("display", "none");
+                        $("#a92").css("display", "none");
+                        $("#a93").css("display", "none");
+                        $("#a94").css("display", "none");
+                        $("#select_9").css("display", "none");
+                        var usr = $("#Quest9").val('No');
+                        $("#continue99").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_9").offset().top }, 1000);
+                    }
+                    function showQues9Opt4() {
+                        $("#no9").css("display", "block");
+                        $("#yes9").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q94").css("display", "block");
+                        //hide Options
+                        $("#a91").css("display", "none");
+                        $("#a92").css("display", "none");
+                        $("#a93").css("display", "none");
+                        $("#a94").css("display", "none");
+                        $("#select_9").css("display", "none");
+                        var usr = $("#Quest9").val('No');
+                        $("#continue99").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_9").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+            </section>
+
+            <!-------------------- Question 10 -------------------->
+            <section id="question_10" class="section question_10" style="display:none">
+                <div id="sa10" class="talk-bubble tri-right left-in" style="margin-top: 5px">
+                    <div class="talktext">
+                        <p style="color:#000"> Why do albatross follow boats? </p>
+                    </div>
+                </div>
+                <div id="select_10" class="talk-bubble-option-select" align="center">
+                    <p style="color:#000"> Select one from below </p>
+                </div>
+                <a onClick="showQues10Opt1();" href="javascript:void(0);">
+                    <div id="a101" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> They are curious </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues10Opt2();" href="javascript:void(0);">
+                    <div id="a102" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> To eat garbage from the boat </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues10Opt3();" href="javascript:void(0);">
+                    <div id="a103" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> They are looking for fish </p>
+                        </div>
+                    </div>
+                </a>
+                <a onClick="showQues10Opt4();" href="javascript:void(0);">
+                    <div id="a104" class="talk-bubble-center">
+                        <div class="talktext">
+                            <p style="color:#000"> They want to steal colourful hats </p>
+                        </div>
+                    </div>
+                </a>
+                <div id="q101" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> They are curious </p>
+                    </div>
+                </div>
+                <div id="q102" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> To eat garbage from the boat </p>
+                    </div>
+                </div>
+                <div id="q103" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> They are looking for fish </p>
+                    </div>
+                </div>
+                <div id="q104" class="talk-bubble-no tri-right right-in-no" style="display:none">
+                    <div class="talktext">
+                        <p style="color:#000"> They want to steal colourful hats </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="Quest10" value="" id="Quest10">
+
+                <!-------------------- Answer 10 - yes -------------------->
+                <section id="yes10" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> You are right! </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> These birds follow boats, ships and vessels in hopes of fish offal
+                                being dumped overboard, but they often pick up a lot of floating plastic instead. </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                <!-------------------- Answer 10 - no -------------------->
+                <section id="no10" class="section" style="display:none">
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> Good try, but that is incorrect! </p>
+                        </div>
+                    </div>
+                    <div class="talk-bubble tri-right left-in">
+                        <div class="talktext">
+                            <p style="color:#000"> These birds follow boats, ships and vessels in hopes of fish offal
+                                being dumped overboard, but they often pick up a lot of floating plastic instead. </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="continue1010" class="section" style="display:none">
+
+                    <div id="select_101" class="talk-bubble-option-select" align="center">
+                        <p style="color:#000"> Select one from below </p>
+                    </div>
+                    <a onClick="showThankYou();" href="javascript:void(0);">
+                        <div id="n1" class="talk-bubble-center">
+                            <div class="talktext">
+                                <p style="color:#000"> Exit </p>
+                            </div>
+                        </div>
+                    </a>
+                </section>
+
+
+
+
+
+
+                <!-------------------- Javascript 10 -------------------->
+                <script>
+
+
+                    function showQues10Opt1() {
+                        $("#no10").css("display", "block");
+                        $("#yes10").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q101").css("display", "block");
+                        //hide Options
+                        $("#a101").css("display", "none");
+                        $("#a102").css("display", "none");
+                        $("#a103").css("display", "none");
+                        $("#a104").css("display", "none");
+                        $("#select_10").css("display", "none");
+                        var usr = $("#Quest10").val('No');
+                        $("#continue1010").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_10").offset().top }, 1000);
+                    }
+                    function showQues10Opt2() {
+                        $("#no10").css("display", "none");
+                        $("#yes10").css("display", "block");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q102").css("display", "block");
+                        //hide Options
+                        $("#a101").css("display", "none");
+                        $("#a102").css("display", "none");
+                        $("#a103").css("display", "none");
+                        $("#a104").css("display", "none");
+                        $("#select_10").css("display", "none");
+                        var usr = $("#Quest10").val('Yes');
+                        $("#continue1010").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_10").offset().top }, 1000);
+                    }
+                    function showQues10Opt3() {
+                        $("#no10").css("display", "block");
+                        $("#yes10").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q103").css("display", "block");
+                        //hide Options
+                        $("#a101").css("display", "none");
+                        $("#a102").css("display", "none");
+                        $("#a103").css("display", "none");
+                        $("#a104").css("display", "none");
+                        $("#select_10").css("display", "none");
+                        var usr = $("#Quest10").val('No');
+                        $("#continue1010").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_10").offset().top }, 1000);
+                    }
+                    function showQues10Opt4() {
+                        $("#no10").css("display", "block");
+                        $("#yes10").css("display", "none");
+                        $("#thank_you").css("display", "none");
+                        //Bold Answer
+                        $("#q104").css("display", "block");
+                        //hide Options
+                        $("#a101").css("display", "none");
+                        $("#a102").css("display", "none");
+                        $("#a103").css("display", "none");
+                        $("#a104").css("display", "none");
+                        $("#select_10").css("display", "none");
+                        var usr = $("#Quest10").val('No');
+                        $("#continue1010").css("display", "block");
+
+                        $('html, body').animate({ scrollTop: $("#question_10").offset().top }, 1000);
+                    }
+
+                </script>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+        </div>
+        <!-------------------- Div quiz_1 closes here -------------------->
+
+        <!-------------------- Thank you -------------------->
+        <section id="thank_you" style="display:none">
+            <div class="talk-bubble-thank-you" align="center">
+                <p style="color:#000; font-size:20px; font-style: italic;"> Thank you for your answers! We hope you've
+                    learnt something new. </p>
+            </div>
+        </section>
+
+    </div>
+    </section>
+    <footer>
+            <br>
+            <div class="verybottom">
+              <div class="container">
+                      
+                <div class="row justify-content-center">
+                  <div class="aligncenter">
+        
+                    <div class="logo">
+                      <a class="brand" href="index.html"><img src="assets/img/sealogo.png" alt="" width="60" /></a>
+                    </div>
+                    <p style="font-size: 18px">
+                      &copy; Seal Conservation
+                    </p>
+                    <br>
+                    <p style="font-size: 18px">
+                        We are aiming at protecting seals and other Marine wildlife in Victoria coastal area.
+                    </p>  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+    <a href="#" class="scrollup"><i class="icon-chevron-up icon-64 icon-plain"></i></a>
+
+    <!-- Javascript Library Files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.easing.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/parallax/jquery.parallax-1.1.3.js"></script>
+    <script src="assets/js/nagging-menu.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/prettyPhoto/jquery.prettyPhoto.js"></script>
+    <script src="assets/js/portfolio/jquery.quicksand.js"></script>
+    <script src="assets/js/portfolio/setting.js"></script>
+    <script src="assets/js/hover/jquery-hover-effect.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/animate.js"></script>
+
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <!-- Template Custom Javascript File -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

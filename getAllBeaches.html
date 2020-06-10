@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Seal Conservation - Beach Reporting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed:400,300,700"
+        rel="stylesheet" />
+
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/color/default.css" rel="stylesheet" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="ico/favicon.ico" />
+    <link rel="shortcut icon" type="image/gif/png" href="/assets/img/sealogo.png">
+
+    <style>
+        .imgresponsive {
+            width: 25%;
+        }
+
+        @media (max-width: 767px) {
+            .imgresponsive {
+                width: 100%;
+            }
+        }
+
+        .Turtle {
+            background-image: url("assets/img/sea.jpg");
+            background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 600px;
+            width: 1000px;
+            align-content: center;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #legend {
+            font-family: Arial, sans-serif;
+            background: #fff;
+            padding: 10px;
+            margin: 10px;
+            border: 3px solid #000;
+        }
+
+        #legend h3 {
+            margin-top: 0;
+        }
+
+        #legend img {
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+
+<body>
+        <header>
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7eccec;">
+                  <a class="navbar-brand" href="index.html" style="margin: 25px 120px 20px 50px">
+                    <img src="assets/img/sealogo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+                    Seal Conservation
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+            
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin: 20px 100px 20px 60px">
+                    <ul class="navbar-nav justify-content-end" style="margin-left: 50px" style="align-content: flex-end">
+                        <li class="nav-item" style="margin-right: 20px">
+                          <a class="nav-link" href="index.html">Home </a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 20px">
+                          <a class="nav-link" href="seal.html">Seals </a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 20px">
+                          <a class="nav-link" href="problem.html">Problems</a>
+                        </li>
+                        <li class="nav-item" style="margin-right: 20px">
+                          <a class="nav-link" href="quiz.html">Quiz</a>
+                        </li>
+                        <li class="nav-item dropdown" style="margin-right: 20px">
+                          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Reporting
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="heatmap.html"> Beach Cleanness Reporting </a>
+                            <a class="dropdown-item" href="injury_reporting.html"> Injured Marine Life Reporting </a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">
+                              Visualisation
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="getAllBeaches.html"> Beach Cleanness Map </a>
+                              <a class="dropdown-item" href="injuredmap.html"> Injured Marine Life Map </a>
+                            </div>
+                          </li>
+                    </div>
+            
+                    </ul>
+            
+                  </div>
+                </nav>
+            
+                <!-- end top -->
+              </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var frequency, beach_names = [];
+        var latitude = [];
+        var longitude = [];
+        var ratings = [];
+        var count_of_ratings = [];
+        var a = 2;
+        var count = 0;
+        $(document).ready(function () {
+            //$("#button2").click(function(){
+            var url5 = 'https://hzbyub316j.execute-api.ap-southeast-2.amazonaws.com/getAllBeachesDeployed'
+
+            $.ajax({
+                url: url5,
+                type: 'GET', // added data type
+                async: false,
+                //https://stackoverflow.com/questions/4614714/cant-access-global-variable-in-jquery-get-within-function
+                contentType: "application/json",
+                crossDomain: true,
+                success: function (res) {
+                    console.log(res.data[0]);
+                    //alert(res.data[0].Beach_Name);
+                    count = Object.keys(res.data).length;
+                    //alert(count);
+                    for (i = 0; i < count; i++) {
+                        beach_names.push(res.data[i].Beach_Name);
+                        latitude.push(res.data[i].Latitude);
+                        longitude.push(res.data[i].Longitude);
+                        ratings.push(res.data[i].Ratings);
+                        count_of_ratings.push(res.data[i].Count_Of_Ratings);
+                    }
+                    //alert(beach_names[0]);
+                    //alert(count_of_ratings[0]);
+                }
+            });
+            //alert(latitude[0]);
+            //});
+        });
+    </script>
+
+<section id="services2" class="section">
+    </section>
+
+    <section id="services1" class="section">
+        <div class="tile3" align="center">
+
+            <div text-align="center">
+                <h2 style="color:#000" align="center"> This map shows the rating of beaches in Victoria. </h2>
+            </div>
+
+            <br>
+
+            <div id="map" align="center"></div>
+            <script type="text/javascript">
+
+                function initMap() {
+                    //alert(a);
+                    var count1 = 2;
+                    var lats = [-37, -36];
+                    var lons = [144, 146];
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 7,
+                        center: new google.maps.LatLng(-37, 145),
+                        mapTypeId: 'terrain'
+                    });
+                    function pinSymbol(color) {
+                        return {
+                            path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
+                            fillColor: color,
+                            fillOpacity: 1,
+                            strokeColor: '#000',
+                            strokeWeight: 2,
+                            scale: 1
+                        };
+                        //https://stackoverflow.com/questions/40289624/change-google-map-marker-color-to-a-color-of-my-choice
+                    } if (ratings[0] == 0) {
+                        alert("0");
+                    }
+                    for (i = 0; i < count; i++) {
+                        if (ratings[i] >= 0 && ratings[i] <= 2.5) {
+                            var latLng = { lat: latitude[i], lng: longitude[i] }; //new google.maps.LatLng(latitude[i],longitude[i]);
+                            var marker = new google.maps.Marker({
+                                position: latLng,
+                                map: map,
+                                title: beach_names[i],
+                                //label: beach_names[i],
+                                icon: pinSymbol('#FF0800') //#FF5733
+                            });
+                        }
+                        if (ratings[i] > 2.5 && ratings[i] <= 5) {
+                            var latLng = { lat: latitude[i], lng: longitude[i] }; //new google.maps.LatLng(latitude[i],longitude[i]);
+                            var marker = new google.maps.Marker({
+                                position: latLng,
+                                map: map,
+                                title: beach_names[i],
+                                //label: beach_names[i],
+                                icon: pinSymbol('#FF8333') //#FF8333
+                            });
+                        }
+                        if (ratings[i] > 5 && ratings[i] <= 7.5) {
+                            var latLng = { lat: latitude[i], lng: longitude[i] }; //new google.maps.LatLng(latitude[i],longitude[i]);
+                            var marker = new google.maps.Marker({
+                                position: latLng,
+                                map: map,
+                                title: beach_names[i],
+                                //label: beach_names[i],
+                                icon: pinSymbol('#C8FF33') //#C8FF33
+                            });
+                        }
+                        if (ratings[i] > 7.5 && ratings[i] <= 10) {
+                            var latLng = { lat: latitude[i], lng: longitude[i] }; //new google.maps.LatLng(latitude[i],longitude[i]);
+                            var marker = new google.maps.Marker({
+                                position: latLng,
+                                map: map,
+                                title: beach_names[i],
+                                //https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple
+                                //label: beach_names[i],
+                                icon: pinSymbol('#4AFF33') //#4AFF33
+                                //https://htmlcolorcodes.com/
+                            });
+                        }
+                    }
+                    var legend = document.getElementById('legend');
+
+                    //alert(latitude[0]);
+
+                    var legend = document.getElementById('mapLegend');
+                    var div = document.createElement('div');
+                    div.innerHTML = '<span><img src="assets/img/logo.png"> </span>';
+                    legend.appendChild(div);
+                    var div = document.createElement('div');
+                    div.innerHTML = '<span><img src="assets/img/logo.png"> Poor Beaches </span>';
+                    legend.appendChild(div);
+                    /* Push Legend to Right Top */
+                    map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
+
+                }
+            </script>
+            <div align="center">
+                <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyGmew2lkGD6QExjNUc3Bmb9cSKluijbo&callback=initMap">
+                    </script>
+            </div>
+            <img src="assets/img/legend_maps.png" width=500px>
+
+            <div text-align="center">
+                <a class="btn btn-theme" style="color:#fff" href="heatmap.html" display="inline-block"> Back </a>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <footer>
+            <br>
+            <div class="verybottom">
+              <div class="container">
+                      
+                <div class="row justify-content-center">
+                  <div class="aligncenter">
+        
+                    <div class="logo">
+                      <a class="brand" href="index.html"><img src="assets/img/sealogo.png" alt="" width="60" /></a>
+                    </div>
+                    <p style="font-size: 18px">
+                      &copy; Seal Conservation
+                    </p>
+                    <br>
+                    <p style="font-size: 18px">
+                        We are aiming at protecting seals and other Marine wildlife in Victoria coastal area.
+                    </p>  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+    <a href="#" class="scrollup"><i class="icon-chevron-up icon-64 icon-plain"></i></a>
+
+    <!-- Javascript Library Files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.easing.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/parallax/jquery.parallax-1.1.3.js"></script>
+    <script src="assets/js/nagging-menu.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/prettyPhoto/jquery.prettyPhoto.js"></script>
+    <script src="assets/js/portfolio/jquery.quicksand.js"></script>
+    <script src="assets/js/portfolio/setting.js"></script>
+    <script src="assets/js/hover/jquery-hover-effect.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/animate.js"></script>
+
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <!-- Template Custom Javascript File -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

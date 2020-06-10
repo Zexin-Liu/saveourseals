@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Seal Conservation - Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!-- styles -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
+  <link href="assets/css/animate.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed:400,300,700"
+    rel="stylesheet" />
+
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/color/default.css" rel="stylesheet" />
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+  <link rel="shortcut icon" href="ico/favicon.ico" />
+  <link rel="shortcut icon" type="image/gif/png" href="/assets/img/sealogo.png">
+
+  <style>
+    .imgresponsive {
+      width: 25%;
+    }
+
+    @media (max-width: 767px) {
+      .imgresponsive {
+        width: 100%;
+      }
+    }
+
+    .Turtle {
+      background-image: url("assets/img/sea.jpg");
+      background-attachment: fixed;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#button1").click(function(){
+      var url4 = 'https://9ngrzpfrlc.execute-api.ap-southeast-2.amazonaws.com/Deploy2'
+    var url5 = 'https://io6j731uj4.execute-api.ap-southeast-2.amazonaws.com/postAllPlasticDeployed'
+    var payload = {
+  "location": "Brighton", //$('#location_b').val(),
+  "total_debris": 10, //$('#total').val(),
+  "consumer_items": 2, //$('#consumer').val(),
+  "packaging_items": 4, //$('#packaging').val(),
+  "fishing_items": 2, //$('#fishing').val(),
+  "foamed_plastic": 1, //$('#foamed').val(),
+  "other_items": 1 //$('#other').val()
+}
+    var payload1 = {
+  //"key1": "Maruti",
+  "key1": "Maruti",        
+  "key2": 12,
+  "key3": "value3"
+}
+    //alert(typeof($('#myInput').val()));
+    $.ajax({
+        url: url5,
+        type:'POST',
+        contentType: 'application/json',
+        crossDomain: true,
+        data: JSON.stringify(payload),
+        dataType: 'json',
+        //https://stackoverflow.com/questions/33607081/how-to-use-ajax-get-or-post-method-to-pass-data-to-amazon-lambda-node-js-functio
+        success: function(data, status) {
+            //alert("Payload1");
+            //alert("data"+data);
+            alert("Thank you for your valuable inputs");
+    },
+        error: function (data, status) {
+           // show an error message
+            //alert(payload.key1);
+           //alert("UnSuccessful");
+            alert("Thank you for your valuable inputs");
+         }
+    });
+  });
+});
+</script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7eccec;">
+          <a class="navbar-brand" href="index.html" style="margin: 25px 120px 20px 50px">
+            <img src="assets/img/sealogo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+            Seal Conservation
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin: 20px 100px 20px 60px">
+            <ul class="navbar-nav justify-content-end" style="margin-left: 50px" style="align-content: flex-end">
+                <li class="nav-item" style="margin-right: 20px">
+                  <a class="nav-link" href="index.html">Home </a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px">
+                  <a class="nav-link" href="seal.html">Seals </a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px">
+                  <a class="nav-link" href="problem.html">Problems</a>
+                </li>
+                <li class="nav-item" style="margin-right: 20px">
+                  <a class="nav-link" href="quiz.html">Quiz</a>
+                </li>
+                <li class="nav-item dropdown" style="margin-right: 20px">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Reporting
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="heatmap.html"> Beach Cleanness Reporting </a>
+                    <a class="dropdown-item" href="injury_reporting.html"> Injured Marine Life Reporting </a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      Visualisation
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="getAllBeaches.html"> Beach Cleanness Map </a>
+                      <a class="dropdown-item" href="injuredmap.html"> Injured Marine Life Map </a>
+                    </div>
+                  </li>
+            </div>
+    
+            </ul>
+    
+          </div>
+        </nav>
+    
+        <!-- end top -->
+      </header>
+  <!-- section intro -->
+  <section id="intro_reportingr">
+    <h1 class="slogan">Plastics Reporting</h1>
+  </section>
+
+  <section id="services1" class="section">
+    <div class="tile3">
+      <div class="heading" align="center">
+        <h3><span>Methodology Of Clean-up And Data Collection</span></h3>
+      </div>
+      <img src="assets/img/beach100.jpg" img class="img-rounded1" />
+      <br>
+      <div class="sub-heading">
+        <p><strong>
+            This methodology is following the data collecting standard of AMDI (Australia Marine Debris
+            Initiative).</strong></p>
+        <p><strong>The data you provide will be incorporated into our database for the convenience of
+            relevant researchers.</strong>
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="services1" class="section">
+    <div class="tile2">
+      <ul class="contact-list">
+        <h1><strong> Location</strong></h1><h2 style="font-size: 20px">Please select the location</h2>
+        <li class="form-group" id="location_b" style="margin-left: 30px">
+            <select>
+              <option value="Aireys Inlet">Aireys Inlet</option>
+              <option value="Albert Park">Albert Park</option>
+              <option value="Anglesea">Anglesea</option>
+              <option value="Apollo Bay">Apollo Bay</option>
+              <option value="Barwon Heads">Barwon Heads</option>
+              <option value="Beaumaris">Beaumaris</option>
+              <option value="Blairgowrie">Blairgowrie</option>
+              <option value="Brighton">Brighton</option>
+              <option value="Cape Otway">Cape Otway</option>
+              <option value="Cape Schanck">Cape Schanck</option>
+              <option value="Cape Woolamai">Cape Woolamai</option>
+              <option value="Clifton Springs">Clifton Springs</option>
+              <option value="Cowes">Cowes</option>
+              <option value="Dromana">Dromana</option>
+              <option value="Elwood">Elwood</option>
+              <option value="Flinders">Flinders</option>
+              <option value="Frankston">Frankston</option>
+              <option value="Geelong">Geelong</option>
+              <option value="Golder Beach">Golder Beach</option>
+              <option value="Hampton">Hampton</option>
+              <option value="Hastings">Hastings</option>
+              <option value="Inverloch">Inverloch</option>
+              <option value="Kilcunda">Kilcunda</option>
+              <option value="Lakes Entrance">Lakes Entrance</option>
+              <option value="Lorne">Lorne</option>
+              <option value="Mallacoota">Mallacoota</option>
+              <option value="Marlo">Marlo</option>
+              <option value="Metung">Metung</option>
+              <option value="Mornington">Mornington</option>
+              <option value="Mount Martha">Mount Martha</option>
+              <option value="Newhaven">Newhaven</option>
+              <option value="Ocean Grove">Ocean Grove</option>
+              <option value="Paynesville">Paynesville</option>
+              <option value="Point Lonsdale">Point Lonsdale</option>
+              <option value="Port Albert">Port Albert</option>
+              <option value="Port Campbell">Port Campbell</option>
+              <option value="Port Fairy">Port Fairy</option>
+              <option value="Port Melbourne">Port Melbourne</option>
+              <option value="Port Welshpool">Port Welshpool</option>
+              <option value="Portarlington">Portarlington</option>
+              <option value="Portland">Portland</option>
+              <option value="Portsea">Portsea</option>
+              <option value="Queenscliff">Queenscliff</option>
+              <option value="Rhyll">Rhyll</option>
+              <option value="Rosebud">Rosebud</option>
+              <option value="Rye">Rye</option>
+              <option value="Safety Beach">Safety Beach</option>
+              <option value="San Remo">San Remo</option>
+              <option value="Sandringham">Sandringham</option>
+              <option value="Sandy Point">Sandy Point</option>
+              <option value="Seaford">Seaford</option>
+              <option value="Seaspray">Seaspray</option>
+              <option value="Sorrento">Sorrento</option>
+              <option value="St Kilda">St Kilda</option>
+              <option value="St Leonards">St Leonards</option>
+              <option value="Tooradin">Tooradin</option>
+              <option value="Torquay">Torquay</option>
+              <option value="Venus Bay">Venus Bay</option>
+              <option value="Walkerville">Walkerville</option>
+              <option value="Waratah Bay">Waratah Bay</option>
+              <option value="Warrnambool">Warrnambool</option>
+              <option value="Werribee">Werribee</option>
+              <option value="Williamstown">Williamstown</option>
+              <option value="Wye River">Wye River</option>
+              <option value="Yanakie">Yanakie</option>
+              <option value="Barwon Bluff Marine Sanctuary">Barwon Bluff Marine Sanctuary</option>
+              <option value="Beware Reef Marine Sanctuary">Beware Reef Marine Sanctuary</option>
+              <option value="Bunurong Marine National Park">Bunurong Marine National Park</option>
+              <option value="Bunurong Marine Park">Bunurong Marine Park</option>
+              <option value="Cape Howe Marine National Park">Cape Howe Marine National Park</option>
+              <option value="Churchill Island Marine National Park">Churchill Island Marine National Park</option>
+              <option value="Corner Inlet Marine & Coastal Park">Corner Inlet Marine & Coastal Park</option>
+              <option value="Corner Inlet Marine National Park">Corner Inlet Marine National Park</option>
+              <option value="Discovery Bay Marine National Park">Discovery Bay Marine National Park</option>
+              <option value="Eagle Rock Marine Sanctuary">Eagle Rock Marine Sanctuary</option>
+              <option value="French Island Marine National Park">French Island Marine National Park</option>
+              <option value="Jawbone Marine Sanctuary">Jawbone Marine Sanctuary</option>
+              <option value="Marengo Reefs Marine Sanctuary">Marengo Reefs Marine Sanctuary</option>
+              <option value="Merri Marine Sanctuary">Merri Marine Sanctuary</option>
+              <option value="Mushroom Reef Marine Sanctuary">Mushroom Reef Marine Sanctuary</option>
+              <option value="Ninety Mile Beach Marine National Park">Ninety Mile Beach Marine National Park</option>
+              <option value="Nooramunga Marine & Coastal Park">Nooramunga Marine & Coastal Park</option>
+              <option value="Point Addis Marine National Park">Point Addis Marine National Park</option>
+              <option value="Point Cooke Marine Sanctuary">Point Cooke Marine Sanctuary</option>
+              <option value="Point Danger Marine Sanctuary">Point Danger Marine Sanctuary</option>
+              <option value="Point Hicks Marine National Park">Point Hicks Marine National Park</option>
+              <option value="Port Phillip Heads Marine National Park">Port Phillip Heads Marine National Park</option>
+              <option value="Ricketts Point Marine Sanctuary">Ricketts Point Marine Sanctuary</option>
+              <option value="Shallow Inlet Marine & Coastal Park">Shallow Inlet Marine & Coastal Park</option>
+              <option value="The Arches Marine Sanctuary">The Arches Marine Sanctuary</option>
+              <option value="Twelve Apostles Marine National Park">Twelve Apostles Marine National Park</option>
+              <option value="Wilsons Promontory Marine National Park">Wilsons Promontory Marine National Park</option>
+              <option value="Wilsons Promontory Marine Park">Wilsons Promontory Marine Park</option>
+              <option value="Wilsons Promontory Marine Reserve ">Wilsons Promontory Marine Reserve </option>
+              <option value="Yaringa Marine National Park">Yaringa Marine National Park</option>
+            </select>
+          </li>
+
+        <br>
+        <br>
+        <h1><strong> Total Amount Of Debris (length > 2.5cm)</strong></h1>
+        <li class="form-group" id="total" style="margin-left: 30px">
+          <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
+        </li>
+        <br>
+        <br>
+        <h2><strong>Plastic Items:</strong></h2>
+        <h3>Consumer Items </h3>
+        <h4>(Cigarette butts, Lighters,
+          Plastic stationary,
+          Plastic cutlery,
+          Toothbrushes, Brushes, Combs, Toys etc)</h4>
+        <li class="form-group" id="consumer" style="margin-left: 30px">
+          <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
+        </li>
+        <h3>Packaging Items</h3>
+        <h4>(Plastic bags,
+          Plastic containers,
+          Plastic drink bottles,
+          Plastic packaging etc)</h4>
+        <li class="form-group" id="packaging" style="margin-left: 30px">
+          <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
+        </li>
+        <h3>Fishing Items</h3>
+        <h4>(Floats, Rope, Net, Rods, Reels etc)</h4>
+        <li class="form-group" id="fishing" style="margin-left: 30px">
+          <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
+        </li>
+        <h3>Foamed Plastic (Polystyrene) Items</h3>
+        <h4>(Foam buoys, Foam packaging etc)</h4>
+        <li class="form-group" id="foamed" style="margin-left: 30px">
+          <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
+        </li>
+        <br>
+        <h2><strong>Other Items:</strong></h2>
+        <h3>All Other Items</h3>
+        <h4>(Glass & Ceramic, Cloth, Metal, Wood, Paper etc)</h4>
+        <li class="form-group" id="other" style="margin-left: 30px">
+          <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
+        </li>
+
+
+        <div style="text-align:center">
+          <a href="heatmap.html" class="btn btn-theme" id="button1"  style="color:#fff">Submit</a>
+        </div>
+      </ul>
+    </div>
+  </section>
+
+
+  <footer>
+      <br>
+      <div class="verybottom">
+        <div class="container">
+                
+          <div class="row justify-content-center">
+            <div class="aligncenter">
+  
+              <div class="logo">
+                <a class="brand" href="index.html"><img src="assets/img/sealogo.png" alt="" width="60" /></a>
+              </div>
+              <p style="font-size: 18px">
+                &copy; Seal Conservation
+              </p>
+              <br>
+              <p style="font-size: 18px">
+                  We are aiming at protecting seals and other Marine wildlife in Victoria coastal area.
+              </p>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <a href="#" class="scrollup"><i class="icon-chevron-up icon-64 icon-plain"></i></a>
+
+  <!-- Javascript Library Files -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.easing.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/parallax/jquery.parallax-1.1.3.js"></script>
+  <script src="assets/js/nagging-menu.js"></script>
+  <script src="assets/js/jquery.nav.js"></script>
+  <script src="assets/js/prettyPhoto/jquery.prettyPhoto.js"></script>
+  <script src="assets/js/portfolio/jquery.quicksand.js"></script>
+  <script src="assets/js/portfolio/setting.js"></script>
+  <script src="assets/js/hover/jquery-hover-effect.js"></script>
+  <script src="assets/js/jquery.scrollTo.min.js"></script>
+  <script src="assets/js/animate.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Custom Javascript File -->
+  <script src="assets/js/custom.js"></script>
+
+
+</body>
+
+</html>

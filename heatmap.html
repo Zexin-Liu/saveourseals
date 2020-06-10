@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Seal Conservation - Beach Reporting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed:400,300,700"
+        rel="stylesheet" />
+
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/color/default.css" rel="stylesheet" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="ico/favicon.ico" />
+    <link rel="shortcut icon" type="image/gif/png" href="/assets/img/sealogo.png">
+
+    <style>
+        .imgresponsive {
+            width: 25%;
+        }
+
+        @media (max-width: 767px) {
+            .imgresponsive {
+                width: 100%;
+            }
+        }
+
+        .Turtle {
+            background-image: url("assets/img/sea.jpg");
+            background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 500px;
+            width: 50%;
+            align-content: center;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #legend {
+            font-family: Arial, sans-serif;
+            background: #fff;
+            padding: 10px;
+            margin: 10px;
+            border: 3px solid #000;
+        }
+
+        #legend h3 {
+            margin-top: 0;
+        }
+
+        #legend img {
+            vertical-align: middle;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var beach_names;
+        var latitude;
+        var longitude;
+        var ratings;
+        var count_of_ratings;
+        var new_ratings;
+        var new_count_of_ratings;
+        var frequency, beach_names_2 = [];
+        var latitude_2 = [];
+        var longitude_2 = [];
+        var ratings_2 = [];
+        var count_of_ratings_2 = [];
+        var count_2 = 0;
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                var url_beach = "https://fwhxsacx8l.execute-api.ap-southeast-2.amazonaws.com/getBeachNameValueDeployed/" + "Brighton"
+                var url_ratings = 'https://sbsyof8j22.execute-api.ap-southeast-2.amazonaws.com/putRatingsValueDeployed'
+                var url_all_beaches = 'https://hzbyub316j.execute-api.ap-southeast-2.amazonaws.com/getAllBeachesDeployed'
+                var payload = {
+                    //"key1": "Maruti",
+                    //"key1": $('#myInput').val(),   
+                    "beach": "Brighton"
+                }
+                $.ajax({
+                    url: url_beach,
+                    type: 'GET', // added data type
+                    async: false,
+                    contentType: "application/json",
+                    crossDomain: true,
+                    success: function (res) {
+                        //alert(res.data[0].Beach_Name);
+                        beach_names = res.data[0].Beach_Name;
+                        latitude = res.data[0].Latitude;
+                        longitude = res.data[0].Longitude;
+                        ratings = res.data[0].Ratings;
+                        count_of_ratings = res.data[0].Count_Of_Ratings;
+                        //alert(count_of_ratings);
+                    }
+                });
+
+                //alert(count_of_ratings);
+                new_ratings = (ratings + $('#beach_rating').val()) / (count_of_ratings + 1)
+                var payload2 = {
+                    "beach_name": "Brighton",
+                    "ratings": new_ratings,
+                    "count_of_ratings": count_of_ratings + 1
+                }
+
+                $.ajax({
+                    url: url_ratings,
+                    type: 'PUT',
+                    contentType: 'application/json',
+                    crossDomain: true,
+                    data: JSON.stringify(payload2),
+                    dataType: 'json',
+                    //https://stackoverflow.com/questions/33607081/how-to-use-ajax-get-or-post-method-to-pass-data-to-amazon-lambda-node-js-functio
+                    success: function (data, status) {
+                        //alert("Putload");
+                        //alert("data"+data);
+                    },
+                    error: function (data, status) {
+                        // show an error message
+                        //alert(payload2.key1);
+                        //alert("UnSuccessful");
+                    }
+                });
+
+                $.ajax({
+                    url: url_all_beaches,
+                    type: 'GET', // added data type
+                    async: false,
+                    //https://stackoverflow.com/questions/4614714/cant-access-global-variable-in-jquery-get-within-function
+                    contentType: "application/json",
+                    crossDomain: true,
+                    success: function (res) {
+                        //console.log(res.data[0]);
+                        //alert(res.data[0].Beach_Name);
+                        count_2 = Object.keys(res.data).length;
+                        //alert(count);
+                        for (i = 0; i < count_2; i++) {
+                            beach_names_2.push(res.data[i].Beach_Name);
+                            latitude_2.push(res.data[i].Latitude);
+                            longitude_2.push(res.data[i].Longitude);
+                            ratings_2.push(res.data[i].Ratings);
+                            count_of_ratings_2.push(res.data[i].Count_Of_Ratings);
+                        }
+                        //alert(beach_names_2[0]);
+                        //alert(count_of_ratings_2[0]);
+                        alert("Thank you for giving your rating.")
+                    }
+                });
+
+            });
+
+        });    
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7eccec;">
+            <a class="navbar-brand" href="index.html" style="margin: 25px 120px 20px 50px">
+                <img src="assets/img/sealogo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+                Seal Conservation
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin: 20px 100px 20px 60px">
+                <ul class="navbar-nav justify-content-end" style="margin-left: 50px" style="align-content: flex-end">
+                    <li class="nav-item" style="margin-right: 20px">
+                        <a class="nav-link" href="index.html">Home </a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px">
+                        <a class="nav-link" href="seal.html">Seals </a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px">
+                        <a class="nav-link" href="problem.html">Problems</a>
+                    </li>
+                    <li class="nav-item" style="margin-right: 20px">
+                        <a class="nav-link" href="quiz.html">Quiz</a>
+                    </li>
+                    <li class="nav-item dropdown" style="margin-right: 20px">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Reporting
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="heatmap.html"> Beach Cleanness Reporting </a>
+                            <a class="dropdown-item" href="injury_reporting.html"> Injured Marine Life Reporting </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Visualisation
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="getAllBeaches.html"> Beach Cleanness Map </a>
+                            <a class="dropdown-item" href="injuredmap.html"> Injured Marine Life Map </a>
+                        </div>
+                    </li>
+            </div>
+
+            </ul>
+
+            </div>
+        </nav>
+
+        <!-- end top -->
+    </header>
+    <!-- section intro -->
+    <section id="intro_reporting">
+        <h1 class="slogan"> Beach Reporting </h1>
+    </section>
+
+    <section id="services1" class="section">
+        <div class="tile3">
+            <h1><strong> Location</strong></h1>
+            <li class="form-group" id="location_b" style="margin-left: 30px">
+                    <select>
+                      <option value="Aireys Inlet">Aireys Inlet</option>
+                      <option value="Albert Park">Albert Park</option>
+                      <option value="Anglesea">Anglesea</option>
+                      <option value="Apollo Bay">Apollo Bay</option>
+                      <option value="Barwon Heads">Barwon Heads</option>
+                      <option value="Beaumaris">Beaumaris</option>
+                      <option value="Blairgowrie">Blairgowrie</option>
+                      <option value="Brighton">Brighton</option>
+                      <option value="Cape Otway">Cape Otway</option>
+                      <option value="Cape Schanck">Cape Schanck</option>
+                      <option value="Cape Woolamai">Cape Woolamai</option>
+                      <option value="Clifton Springs">Clifton Springs</option>
+                      <option value="Cowes">Cowes</option>
+                      <option value="Dromana">Dromana</option>
+                      <option value="Elwood">Elwood</option>
+                      <option value="Flinders">Flinders</option>
+                      <option value="Frankston">Frankston</option>
+                      <option value="Geelong">Geelong</option>
+                      <option value="Golder Beach">Golder Beach</option>
+                      <option value="Hampton">Hampton</option>
+                      <option value="Hastings">Hastings</option>
+                      <option value="Inverloch">Inverloch</option>
+                      <option value="Kilcunda">Kilcunda</option>
+                      <option value="Lakes Entrance">Lakes Entrance</option>
+                      <option value="Lorne">Lorne</option>
+                      <option value="Mallacoota">Mallacoota</option>
+                      <option value="Marlo">Marlo</option>
+                      <option value="Metung">Metung</option>
+                      <option value="Mornington">Mornington</option>
+                      <option value="Mount Martha">Mount Martha</option>
+                      <option value="Newhaven">Newhaven</option>
+                      <option value="Ocean Grove">Ocean Grove</option>
+                      <option value="Paynesville">Paynesville</option>
+                      <option value="Point Lonsdale">Point Lonsdale</option>
+                      <option value="Port Albert">Port Albert</option>
+                      <option value="Port Campbell">Port Campbell</option>
+                      <option value="Port Fairy">Port Fairy</option>
+                      <option value="Port Melbourne">Port Melbourne</option>
+                      <option value="Port Welshpool">Port Welshpool</option>
+                      <option value="Portarlington">Portarlington</option>
+                      <option value="Portland">Portland</option>
+                      <option value="Portsea">Portsea</option>
+                      <option value="Queenscliff">Queenscliff</option>
+                      <option value="Rhyll">Rhyll</option>
+                      <option value="Rosebud">Rosebud</option>
+                      <option value="Rye">Rye</option>
+                      <option value="Safety Beach">Safety Beach</option>
+                      <option value="San Remo">San Remo</option>
+                      <option value="Sandringham">Sandringham</option>
+                      <option value="Sandy Point">Sandy Point</option>
+                      <option value="Seaford">Seaford</option>
+                      <option value="Seaspray">Seaspray</option>
+                      <option value="Sorrento">Sorrento</option>
+                      <option value="St Kilda">St Kilda</option>
+                      <option value="St Leonards">St Leonards</option>
+                      <option value="Tooradin">Tooradin</option>
+                      <option value="Torquay">Torquay</option>
+                      <option value="Venus Bay">Venus Bay</option>
+                      <option value="Walkerville">Walkerville</option>
+                      <option value="Waratah Bay">Waratah Bay</option>
+                      <option value="Warrnambool">Warrnambool</option>
+                      <option value="Werribee">Werribee</option>
+                      <option value="Williamstown">Williamstown</option>
+                      <option value="Wye River">Wye River</option>
+                      <option value="Yanakie">Yanakie</option>
+                      <option value="Barwon Bluff Marine Sanctuary">Barwon Bluff Marine Sanctuary</option>
+                      <option value="Beware Reef Marine Sanctuary">Beware Reef Marine Sanctuary</option>
+                      <option value="Bunurong Marine National Park">Bunurong Marine National Park</option>
+                      <option value="Bunurong Marine Park">Bunurong Marine Park</option>
+                      <option value="Cape Howe Marine National Park">Cape Howe Marine National Park</option>
+                      <option value="Churchill Island Marine National Park">Churchill Island Marine National Park</option>
+                      <option value="Corner Inlet Marine & Coastal Park">Corner Inlet Marine & Coastal Park</option>
+                      <option value="Corner Inlet Marine National Park">Corner Inlet Marine National Park</option>
+                      <option value="Discovery Bay Marine National Park">Discovery Bay Marine National Park</option>
+                      <option value="Eagle Rock Marine Sanctuary">Eagle Rock Marine Sanctuary</option>
+                      <option value="French Island Marine National Park">French Island Marine National Park</option>
+                      <option value="Jawbone Marine Sanctuary">Jawbone Marine Sanctuary</option>
+                      <option value="Marengo Reefs Marine Sanctuary">Marengo Reefs Marine Sanctuary</option>
+                      <option value="Merri Marine Sanctuary">Merri Marine Sanctuary</option>
+                      <option value="Mushroom Reef Marine Sanctuary">Mushroom Reef Marine Sanctuary</option>
+                      <option value="Ninety Mile Beach Marine National Park">Ninety Mile Beach Marine National Park</option>
+                      <option value="Nooramunga Marine & Coastal Park">Nooramunga Marine & Coastal Park</option>
+                      <option value="Point Addis Marine National Park">Point Addis Marine National Park</option>
+                      <option value="Point Cooke Marine Sanctuary">Point Cooke Marine Sanctuary</option>
+                      <option value="Point Danger Marine Sanctuary">Point Danger Marine Sanctuary</option>
+                      <option value="Point Hicks Marine National Park">Point Hicks Marine National Park</option>
+                      <option value="Port Phillip Heads Marine National Park">Port Phillip Heads Marine National Park</option>
+                      <option value="Ricketts Point Marine Sanctuary">Ricketts Point Marine Sanctuary</option>
+                      <option value="Shallow Inlet Marine & Coastal Park">Shallow Inlet Marine & Coastal Park</option>
+                      <option value="The Arches Marine Sanctuary">The Arches Marine Sanctuary</option>
+                      <option value="Twelve Apostles Marine National Park">Twelve Apostles Marine National Park</option>
+                      <option value="Wilsons Promontory Marine National Park">Wilsons Promontory Marine National Park</option>
+                      <option value="Wilsons Promontory Marine Park">Wilsons Promontory Marine Park</option>
+                      <option value="Wilsons Promontory Marine Reserve ">Wilsons Promontory Marine Reserve </option>
+                      <option value="Yaringa Marine National Park">Yaringa Marine National Park</option>
+                    </select>
+                  </li>
+
+            <div class="slidecontainer">
+                <h1><strong> General Rating Of Beach Cleanliness </strong></h1>
+                <br>
+                <input type="range" min="1" max="10" value="5" class="slider" id="beach_rating">
+                <h3>Rating: <span id="demo"></span></h3>
+                <br>
+            </div>
+
+            <div style="text-align:center">
+                <a class="btn btn-theme" id="button1" style="color: #fff"> Submit Rating </a>
+            </div>
+            <br>
+            <div text-align="center">
+                <h3> A map of Victorian beaches is shown with the cleanliness level of them rated by the visitors to the
+                    beaches. </h3>
+            </div>
+            <div style="text-align:center">
+                <a href="getAllBeaches.html" class="btn btn-theme" id="button2" style="color: #fff"> View Map </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services1" class="section">
+        <div class="tile3">
+            <div style="text-align:center">
+                <h3> We have plastics collection log that can be reported in a form. </h3>
+                <h3> If you have collected plastics, please do visit this page to report it. </h3>
+                <a href="cleaness_reporting.html" class="btn btn-theme" id="button_plastics"> Plastics Reporting </a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <a href="index.html" class="btn btn-theme">Back to Home</a>
+            </div>
+        </div>
+    </section>
+    <!--
+    <section id="services1" class="section">
+        <div id="Turtle1" class="tile3">
+-->
+    <!--
+            <div id="map" align="center"></div>
+            <script type="text/javascript">
+
+      function initMap() {
+          //alert(a);
+          //alert("Hi");
+          var count1 = 2;
+          var lats = [-38,-36];
+          var lons = [144, 146];
+          map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: new google.maps.LatLng(-38,144),
+          mapTypeId: 'terrain'
+              });
+          function pinSymbol(color) {
+              return {
+                  path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
+                  fillColor: color,
+                  fillOpacity: 1,
+                  strokeColor: '#000',
+                  strokeWeight: 2,
+                  scale: 1
+              };
+              //https://stackoverflow.com/questions/40289624/change-google-map-marker-color-to-a-color-of-my-choice
+          } 
+          //alert("hi");
+          //alert(latitude_2[0]);
+          if(ratings_2[0] > 0){
+                          alert("0");
+                      }
+          for(i=0;i<count_2;i++)
+              {               
+                  if (ratings_2[i]>=0 && ratings_2[i]<=2.5)
+                  {   
+                      var latLng = {lat: latitude_2[i], lng: longitude_2[i]}; //new google.maps.LatLng(latitude[i],longitude[i]);
+                      var marker = new google.maps.Marker({
+                      position: latLng,
+                      map: map,
+                      title: beach_names_2[i],
+                      //label: beach_names[i],
+                      icon: pinSymbol('#FF0800') //#FF5733
+                        });
+                  }
+                  if (ratings_2[i]>2.5 && ratings_2[i]<=5){   
+                      var latLng = {lat: latitude_2[i], lng: longitude_2[i]}; //new google.maps.LatLng(latitude[i],longitude[i]);
+                      var marker = new google.maps.Marker({
+                      position: latLng,
+                      map: map,
+                      title: beach_names_2[i],
+                      //label: beach_names[i],
+                      icon: pinSymbol('#FF8333') //#FF8333
+                        });
+                  }
+                  if (ratings_2[i]>5 && ratings_2[i]<=7.5){   
+                      var latLng = {lat: latitude_2[i], lng: longitude_2[i]}; //new google.maps.LatLng(latitude[i],longitude[i]);
+                      var marker = new google.maps.Marker({
+                      position: latLng,
+                      map: map,
+                      title: beach_names_2[i],
+                      //label: beach_names[i],
+                      icon: pinSymbol('#C8FF33') //#C8FF33
+                        });
+                  }
+                  if (ratings_2[i]>7.5 && ratings_2[i]<=10){   
+                      var latLng = {lat: latitude_2[i], lng: longitude_2[i]}; //new google.maps.LatLng(latitude[i],longitude[i]);
+                      var marker = new google.maps.Marker({
+                      position: latLng,
+                      map: map,
+                      title: beach_names_2[i],
+                      //https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple
+                      //label: beach_names[i],
+                      icon: pinSymbol('#4AFF33') //#4AFF33
+                      //https://htmlcolorcodes.com/
+                        });
+                  }
+              }
+            var legend = document.getElementById('legend');
+            
+            //alert(latitude_2[0]);
+          
+          var legend = document.getElementById('mapLegend');
+          var div = document.createElement('div');
+          div.innerHTML = '<span><img src="assets/img/logo.png"> </span>';
+          legend.appendChild(div);
+          var div = document.createElement('div');
+          div.innerHTML = '<span><img src="assets/img/logo.png"> Poor Beaches </span>';
+          legend.appendChild(div);
+          /* Push Legend to Right Top */
+          map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
+
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyGmew2lkGD6QExjNUc3Bmb9cSKluijbo&callback=initMap">
+    </script>
+-->
+
+    <!--
+            <div style="text-align:center">
+                <a class="btn btn-theme" type="button" id="button2" style="color:#fff" href="getAllBeaches.html"> Refresh Map </a>
+            </div>
+-->
+
+    <!--
+   
+            <div class="heading" align="center">
+                <h3><span> Beach Cleanliness Rating Visualisation </span></h3>
+            </div>
+            <div class="sub-heading">
+                <p><strong>The circle with different color illustrate the cleanness rating of corresponding beach
+                        area.</strong>
+                </p>
+                <p><strong>
+                        This visualization is built based on the data collecting of beach cleanness reporting
+                        system.</strong></p>
+
+            </div>
+            <br>
+            <div style="text-align:center">
+                <h2> If you have plastics that you have collected, please do visit this page to report it. </h2>
+                <a href="cleaness_reporting.html" class="btn btn-theme" id="button_plastics"> Plastics Reporting </a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <a href="index.html" class="btn btn-theme">Back to Home</a>
+            </div>
+        </div>
+    </section>
+-->
+
+
+<footer>
+        <br>
+        <div class="verybottom">
+          <div class="container">
+                  
+            <div class="row justify-content-center">
+              <div class="aligncenter">
+    
+                <div class="logo">
+                  <a class="brand" href="index.html"><img src="assets/img/sealogo.png" alt="" width="60" /></a>
+                </div>
+                <p style="font-size: 18px">
+                  &copy; Seal Conservation
+                </p>
+                <br>
+                <p style="font-size: 18px">
+                    We are aiming at protecting seals and other Marine wildlife in Victoria coastal area.
+                </p>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <a href="#" class="scrollup"><i class="icon-chevron-up icon-64 icon-plain"></i></a>
+
+    <!-- Javascript Library Files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.easing.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/parallax/jquery.parallax-1.1.3.js"></script>
+    <script src="assets/js/nagging-menu.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/prettyPhoto/jquery.prettyPhoto.js"></script>
+    <script src="assets/js/portfolio/jquery.quicksand.js"></script>
+    <script src="assets/js/portfolio/setting.js"></script>
+    <script src="assets/js/hover/jquery-hover-effect.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/animate.js"></script>
+
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <!-- Template Custom Javascript File -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+        var slider = document.getElementById("beach_rating");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
+        function showTurtle2() {
+            gooogle.maps.event.trigger(map, 'resize');
+        }
+
+    </script>
+</body>
+
+</html>

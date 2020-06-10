@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+
+    
+<head>
+  <meta charset="utf-8">
+  <title>Seal Conservation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!-- styles -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
+  <link href="assets/css/animate.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Roboto+Condensed:400,300,700" rel="stylesheet" />
+
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/color/default.css" rel="stylesheet" />
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+  <link rel="shortcut icon" href="ico/favicon.ico" />
+  <link rel="shortcut icon" type="image/gif/png" href="/assets/img/sealogo.png">
+    
+    
+<style>
+        .button1{
+            background-color: #87BAEE;
+            color: #000;
+            border-radius: 5px;
+            padding: 15px 32px;
+        }
+
+/****************************** CSS talk bubble ***********************************/
+.talk-bubble { /* left arrow */
+  position: relative;
+	width: 50%;
+	height: auto;
+	background-color: greenyellow;
+    margin-left: 5px;
+    padding: 0 20px 0 20px;
+    float: left;
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+    .talk-bubble2 { /* right arrow*/
+  position: relative;
+	width: 50%;
+	height: auto;
+	background-color: greenyellow;
+    margin-right: 5px;
+    padding: 0 20px 0 20px;
+    float: right;
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+    .talk-bubble-yes { /* highlight yes */
+  position: relative;
+	width: 50%;
+	height: auto;
+	background-color: green;
+    margin-right: 5px;
+    padding: 0 20px 0 20px;
+    float: right;
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+    .talk-bubble-no { /* highlight no */
+  position: relative;
+	width: 50%;
+	height: auto;
+	background-color:  orangered;
+    margin-right: 5px;
+    padding: 0 20px 0 20px;
+    float: right;
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+     .talk-bubble-center { /* right arrow*/
+  position: relative;
+	width: 50%;
+	height: auto;
+	background-color: yellowgreen;
+    margin-left: 20%;
+    margin-right: 15%;
+    padding: 0 20px 0 20px;
+    float: left;
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+    .talk-bubble-option-select { /* right arrow*/
+  position: relative;
+	width: 50% ;
+    align-content: center;  
+	height: auto;
+	background-color: white;
+    margin-left: 20%;
+    margin-right: 15%;
+    padding: 0 20px 0 20px;
+    float: left;
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+     .talk-bubble-thank-you { /* right arrow*/
+  position: relative;
+	width: 50% ;
+    align-content: center;  
+	height: auto;
+	background-color: white;
+    margin-left: 20%;
+    margin-right: 15%;
+    padding: 0 20px 0 20px;
+    float: left;
+    margin-bottom: 5px;
+    font-family: cursive;
+}
+.border{
+  border: 8px solid #666;
+}
+.round{
+  border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+
+}
+/****************************** left arrow mark ******************************/
+/* Right triangle, left side slightly down */
+.tri-right.border.left-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -40px;
+	right: auto;
+  top: 30px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #666 #666 transparent transparent;
+}
+.tri-right.left-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -20px;
+	right: auto;
+  top: 15px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: greenyellow greenyellow transparent transparent;
+}
+    
+/*********************************** right arrow mark ******************************/
+/* Right triangle, left side slightly down */
+.tri-right.border.right-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -40px;
+  top: 30px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #666 #666 transparent transparent;
+}
+.tri-right.right-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -20px;
+  top: 15px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: greenyellow transparent transparent greenyellow;
+}
+    
+/*********************************** rigth arrow mark yes *********************************/
+/* Right triangle, left side slightly down */
+.tri-right.border.right-in-yes:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -40px;
+  top: 30px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #666 #666 transparent transparent;
+}
+.tri-right.right-in-yes:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -20px;
+  top: 15px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: green transparent transparent green;
+}
+    
+/******************************************* right arrow mark no ****************************************/
+/* Right triangle, left side slightly down */
+.tri-right.border.right-in-no:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -40px;
+  top: 30px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #666 #666 transparent transparent;
+}
+.tri-right.right-in-no:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: -20px;
+  top: 15px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: orangered transparent transparent orangered;
+}
+
+/************************************************** talk bubble contents *************************************************/
+.talktext{
+  padding: 1em;
+	text-align: left;
+    color: #000;
+  line-height: 1.5em;
+}
+.talktext p{
+  /* remove webkit p margins */
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+.talktext1{
+  padding: 1em;
+	text-align: left;
+    color: #000;
+  line-height: 1.5em;
+}
+.talktext1 p{
+  /* remove webkit p margins */
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+    
+#a11:hover, #a12:hover, #n1:hover{
+    background-color: yellow;
+}
+    </style>
+    </head>
+    <body>
+     <header>
+    <!-- start top -->
+    <div id="topnav" class="navbar navbar-fixed-top default">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html"><img src="assets/img/sealogo.png" width ="50" alt="" /></a>
+          </div>
+          <div class="pageheadersname">
+            <a href="index.html"><h3 color="blue"> Seal Conservation </h3></a>  
+          </div>
+          <div class="navigation">
+            <nav>
+              <ul class="nav pull-right">
+                <li class="current"><a href="#intro">Home</a></li>
+                <li><a href="seal.html" class="external">Seals</a></li>
+                <li><a href="problem.html" class="external">Problem</a></li>
+                <li><a href="plan.html" class="external">Plan</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <!--<li class="dropdown">
+                  <a href="#contact">Message <i class="icon-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="components.html" class="external">Components</a></li>
+                    <li><a href="icons.html" class="external">Icons</a></li>
+                    <li><a href="animations.html" class="external">56 Animations</a></li>
+                  </ul>
+                </li>-->
+              </ul>
+            </nav>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <!-- end top -->
+  </header>
+ <section id="services1" class="section">
+  <div class="container">
+        <br>
+        <h1 align="center"> Questionnaire </h1>
+        <strong><h2 align="center"> Your answers may help us. </h2></strong><br><br>
+        <div class="span12" align="left">
+        <h2> What is your favourite animal? </h2>
+        </div>
+      
+      <!-------------------- Question 1 -------------------->
+      <section id="question_1" class="section"  style="display:block">
+          <div class="talk-bubble tri-right left-in" style="cursor: auto">
+              <div class="talktext">
+                  <p style="color:#000"> Do you think seals need to be saved? </p>
+              </div>
+          </div>
+          <div id="select_1" class="talk-bubble-option-select" align="center">
+                  <p style="color:#000"> Select one from below </p>
+          </div>
+          <a onClick="showTurtle11();" href="javascript:void(0);"><div id="a11" class="talk-bubble-center">
+              <div id="qq1" class="talktext">
+                  <p style="color:#000"> Yes </p>
+              </div>
+          </div></a>
+          <a onClick="showTurtle12();" href="javascript:void(0);"><div id="a12" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> No </p>
+              </div>
+          </div></a>
+          <div id="q11" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> Yes </p>
+              </div>
+          </div>
+          <div id="q12" class="talk-bubble-no tri-right right-in-no" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> No </p>
+              </div>
+          </div>
+      </section>
+      
+      <!-------------------- Answer 1 - yes -------------------->
+      <section id="yes1" class="section" style="display:none">
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> You are right. </p>
+              </div>
+          </div>
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> They are few in number along the Victorian coastline. Their habitats need to be restored to them and their lives returned. </p>
+              </div>
+          </div>
+          
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> Do you wish to continue? </p>
+              </div>
+          </div>
+           <div id="select_1" class="talk-bubble-option-select" align="center">
+                  <p style="color:#000"> Select one from below </p>
+          </div>
+          <a onClick="showTurtle13();" href="javascript:void(0);"><div id="n1" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> Yes </p>
+              </div>
+          </div></a>
+          <a onClick="showTurtle14();" href="javascript:void(0);"><div id="n1" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> No </p>
+              </div>
+          </div></a>
+      </section>
+      
+      <!-------------------- Answer 1 - no -------------------->
+      <section id="no1" class="section" style="display:none">
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> No, they need to be saved. </p>
+              </div>
+          </div>
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> They are few in number along the Victorian coastline. Their habitats need to be restored to them and their lives returned. </p>
+              </div>
+          </div>
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> Do you wish to continue? </p>
+              </div>
+          </div>
+           <div id="select_1" class="talk-bubble-option-select" align="center">
+                  <p style="color:#000"> Select one from below </p>
+          </div>
+          <a onClick="showTurtle13();" href="javascript:void(0);"><div id="n1" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> Yes </p>
+              </div>
+          </div></a>
+          <a onClick="showTurtle14();" href="javascript:void(0);"><div id="n1" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> No </p>
+              </div>
+          </div></a>
+      </section>
+      
+      
+      <!-------------------- Thank you 1 -------------------->
+      <section id="thankyou1" style="display:none">
+      <div id="thank_you" class="talk-bubble-thank-you" align="center", style="display:none">
+          <p style="color:#000"> Thank you for your answers. Hope you learnt something new. </p>
+      </div>
+      <!--<div id="n2" class="talk-bubble-center" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> Yes </p>
+              </div>
+      </div>
+      <div id="n3" class="talk-bubble-center" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> No </p>
+              </div>
+      </div>-->
+      </section>
+      
+      <!-------------------- Javascript 1 -------------------->
+      <script>
+          function showTurtle11()
+          {
+              $("#yes1").css("display", "block");
+              $("#no1").css("display", "none");
+              $("#thank_you").css("display", "none");
+              $("#a12").css("display", "none");
+              $("#q11").css("display", "block");
+              $("#a11").css("display", "none");
+              $("#select_1").css("display", "none");
+          }
+          function showTurtle12()
+          {
+              $("#no1").css("display", "block");
+              $("#yes1").css("display", "none");
+              $("#thank_you").css("display", "none");
+              $("#a11").css("display", "none");
+              $("#a12").css("display", "none");
+              $("#q12").css("display", "block");
+              $("#select_1").css("display", "none");
+          }
+          function showTurtle13()
+          {
+              $("#question_2").css("display", "block");           
+              $("#question_1").css("display", "none");
+              $("#no1").css("display", "none");
+              $("#yes1").css("display", "none");
+              $("#thank_you").css("display", "none");
+              $("#select_1").css("display", "none");
+          }
+          function showTurtle14()
+          {
+              $("#thank_you").css("display", "block");
+              $("#select_1").css("display", "none");
+              /*$("#n2").css("display", "block");
+              $("#n3").css("display", "block");*/
+          }
+      </script>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+     <!-------------------- Question 2 -------------------->
+      <section id="question_2" class="section"  style="display:none">
+          <div class="talk-bubble tri-right left-in" style="margin-top: 5px">
+              <div class="talktext">
+                  <p style="color:#000"> What type of harm is most to marine animals? </p>
+              </div>
+          </div>
+          <div id="select_2" class="talk-bubble-option-select" align="center">
+                  <p style="color:#000"> Select one from below </p>
+          </div>
+          <a onClick="showTurtle21();" href="javascript:void(0);"><div id="a21" class="talk-bubble-center">
+              <div id="qq1" class="talktext">
+                  <p style="color:#000"> Entanglement </p>
+              </div>
+          </div></a>
+          <a onClick="showTurtle22();" href="javascript:void(0);"><div id="a22" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> Ingestion </p>
+              </div>
+          </div></a>
+          <a onClick="showTurtle23();" href="javascript:void(0);"><div id="a23" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> Collision </p>
+              </div>
+          </div></a>
+          <div id="q21" class="talk-bubble-yes tri-right right-in-yes" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> Entanglement </p>
+              </div>
+          </div>
+          <div id="q22" class="talk-bubble-no tri-right right-in-no" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> Ingestion </p>
+              </div>
+          </div>
+          <div id="q23" class="talk-bubble-no tri-right right-in-no" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> Collision </p>
+              </div>
+          </div>
+      </section>
+      
+      <!-------------------- Answer 2 - yes -------------------->
+      <section id="yes2" class="section" style="display:none">
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> You are right. </p>
+              </div>
+          </div>
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> Entanglement causes more problems as the animals get the plastics stuck around their body and need human assistance to help them get rid of it. This can cause life threatening injuries and are harmful in many ways. </p>
+              </div>
+          </div>
+          
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> Do you wish to continue? </p>
+              </div>
+          </div>
+           <div id="select_2" class="talk-bubble-option-select" align="center">
+                  <p style="color:#000"> Select one from below </p>
+          </div>
+          <a onClick="showTurtle24();" href="javascript:void(0);"><div id="n1" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> Yes </p>
+              </div>
+          </div></a>
+          <a onClick="showTurtle25();" href="javascript:void(0);"><div id="n1" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> No </p>
+              </div>
+          </div></a>
+      </section>
+      
+      <!-------------------- Answer 2 - no -------------------->
+      <section id="no2" class="section" style="display:none">
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> No, it is Entanglement </p>
+              </div>
+          </div>
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> Entanglement causes more problems as the animals get the plastics stuck around their body and need human assistance to help them get rid of it. This can cause life threatening injuries and are harmful in many ways. </p>
+              </div>
+          </div>
+          <div class="talk-bubble tri-right left-in">
+              <div class="talktext">
+                  <p style="color:#000"> Do you wish to continue? </p>
+              </div>
+          </div>
+           <div id="select_2" class="talk-bubble-option-select" align="center">
+                  <p style="color:#000"> Select one from below </p>
+          </div>
+          <a onClick="showTurtle24();" href="javascript:void(0);"><div id="n1" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> Yes </p>
+              </div>
+          </div></a>
+          <a onClick="showTurtle25();" href="javascript:void(0);"><div id="n1" class="talk-bubble-center">
+              <div class="talktext">
+                  <p style="color:#000"> No </p>
+              </div>
+          </div></a>
+      </section>
+      
+      <!-------------------- Thank you 2 -------------------->
+      <section id="thankyou2" style="display:none">
+      <div id="thank_you2" class="talk-bubble-thank-you" align="center", style="display:none">
+          <p style="color:#000"> Thank you for your answers. Hope you learnt something new. </p>
+      </div>
+      <!--<div id="n2" class="talk-bubble-center" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> Yes </p>
+              </div>
+      </div>
+      <div id="n3" class="talk-bubble-center" style="display:none">
+              <div class="talktext">
+                  <p style="color:#000"> No </p>
+              </div>
+      </div>-->
+      </section>
+      
+      <!-------------------- Previous -------------------->
+      
+      <!-------------------- Javascript 2 -------------------->
+      <script>
+          function showTurtle21()
+          {
+              $("#yes2").css("display", "block");
+              $("#no2").css("display", "none");
+              $("#thank_you2").css("display", "none");
+              $("#a22").css("display", "none");
+              $("#q21").css("display", "block");
+              $("#a21").css("display", "none");
+              $("#a23").css("display", "none");
+              $("#select_2").css("display", "none");
+          }
+          function showTurtle22()
+          {
+              $("#no2").css("display", "block");
+              $("#yes2").css("display", "none");
+              $("#thank_you2").css("display", "none");
+              $("#a21").css("display", "none");
+              $("#a22").css("display", "none");
+              $("#q22").css("display", "block");
+              $("#a23").css("display", "none");
+              $("#select_2").css("display", "none");
+          }
+          function showTurtle23()
+          {
+              $("#no2").css("display", "block");
+              $("#yes2").css("display", "none");
+              $("#thank_you2").css("display", "none");
+              $("#a21").css("display", "none");
+              $("#a22").css("display", "none");
+              $("#q23").css("display", "block");
+              $("#a23").css("display", "none");
+              $("#select_2").css("display", "none");
+          }
+          function showTurtle24()
+          {
+              $("#question_3").css("display", "block");           
+              $("#question_2").css("display", "none");
+              $("#no2").css("display", "none");
+              $("#yes2").css("display", "none");
+              $("#thank_you2").css("display", "none");
+              $("#select_2").css("display", "none");
+          }
+          function showTurtle25()
+          {
+              $("#thank_you2").css("display", "block");
+              $("#select_2").css("display", "none");
+              /*$("#n2").css("display", "block");
+              $("#n3").css("display", "block");*/
+          }
+      </script>
+      
+
+     
+     </div>
+    </section>              
+    <footer>
+    <div class="verybottom">
+      <div class="container">
+    
+              <div class="logo" align="center" style="margin-top:5px">
+                <a class="brand" href="index.html"><img src="assets/img/sealogo.png" alt="" width="80"/></a>
+              </div>
+              <p align="center">
+                &copy; Seal Conservation    
+              </p>
+              <div class="credits">
+              </div>
+            </div>
+         
+    </div>  
+  </footer>
+  <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-48 active"></i></a>
+        
+        <!-- Javascript Library Files -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.easing.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/parallax/jquery.parallax-1.1.3.js"></script>
+  <script src="assets/js/nagging-menu.js"></script>
+  <script src="assets/js/jquery.nav.js"></script>
+  <script src="assets/js/prettyPhoto/jquery.prettyPhoto.js"></script>
+  <script src="assets/js/portfolio/jquery.quicksand.js"></script>
+  <script src="assets/js/portfolio/setting.js"></script>
+  <script src="assets/js/hover/jquery-hover-effect.js"></script>
+  <script src="assets/js/jquery.scrollTo.min.js"></script>
+  <script src="assets/js/animate.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Custom Javascript File -->
+  <script src="assets/js/custom.js"></script>
+
+    </body>
+</html>
